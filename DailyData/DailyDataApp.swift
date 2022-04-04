@@ -1,17 +1,12 @@
-//
-//  DailyDataApp.swift
-//  DailyData
-//
-//  Created by Fede Duarte on 3/4/22.
-//
-
 import SwiftUI
 
 @main
 struct DailyDataApp: App {
+    let context = PersistentContainer.persistentContainer.viewContext
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, context)
         }
     }
 }

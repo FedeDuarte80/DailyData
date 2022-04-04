@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21D62" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Flightdata" representedClassName="Flightdata" syncable="YES" codeGenerationType="class">
+        <attribute name="arrival1" optional="YES" attributeType="String"/>
+        <attribute name="arrival2" optional="YES" attributeType="String"/>
+        <attribute name="arrival3" optional="YES" attributeType="String"/>
+        <attribute name="arrival4" optional="YES" attributeType="String"/>
+        <attribute name="cabincrew2" optional="YES" attributeType="String"/>
+        <attribute name="cabincrew3" optional="YES" attributeType="String"/>
+        <attribute name="cabincrew4" optional="YES" attributeType="String"/>
+        <attribute name="cabincrew5" optional="YES" attributeType="String"/>
+        <attribute name="captain" optional="YES" attributeType="String"/>
+        <attribute name="departure1" optional="YES" attributeType="String"/>
+        <attribute name="departure2" optional="YES" attributeType="String"/>
+        <attribute name="departure3" optional="YES" attributeType="String"/>
+        <attribute name="departure4" optional="YES" attributeType="String"/>
+        <attribute name="destination1" optional="YES" attributeType="String"/>
+        <attribute name="destination2" optional="YES" attributeType="String"/>
+        <attribute name="flight1" optional="YES" attributeType="String"/>
+        <attribute name="flight2" optional="YES" attributeType="String"/>
+        <attribute name="flight3" optional="YES" attributeType="String"/>
+        <attribute name="flight4" optional="YES" attributeType="String"/>
+        <attribute name="flightcrew1" optional="YES" attributeType="String"/>
+        <attribute name="flightcrew2" optional="YES" attributeType="String"/>
+        <attribute name="pax1" optional="YES" attributeType="String"/>
+        <attribute name="pax2" optional="YES" attributeType="String"/>
+        <attribute name="pax3" optional="YES" attributeType="String"/>
+        <attribute name="pax4" optional="YES" attributeType="String"/>
+        <attribute name="registration" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Flightdata" positionX="-54" positionY="-9" width="128" height="419"/>
+    </elements>
+</model>
