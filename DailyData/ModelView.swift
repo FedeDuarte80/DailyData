@@ -87,7 +87,6 @@ struct ModelView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-               // Divider().padding(.bottom, 5)
                 HStack {
 // MARK: - DESTINATION
                     VStack(alignment: .leading) {
@@ -277,7 +276,6 @@ struct ModelView: View {
             .padding()
             .navigationTitle("Today's info")
             .navigationBarTitleDisplayMode(.inline)
-           // .background(Color("bg"))
             .onAppear {
                 let appearance = UINavigationBarAppearance()
                 appearance.backgroundColor = UIColor(Color("tb"))
@@ -369,29 +367,5 @@ struct ModelView_Previews: PreviewProvider {
         }
     }
 }
-/*
- newData.flight1 = flight1
- newData.departure1 = departure1
- newData.arrival1 = arrival1
- newData.pax1 = pax1
- newData.flight2 = flight2
- newData.departure2 = departure2
- newData.arrival2 = arrival2
- newData.pax2 = pax2
- newData.flight3 = flight3
- newData.departure3 = departure3
- newData.arrival3 = arrival3
- newData.pax3 = pax3
- newData.flight4 = flight4
- newData.departure4 = departure4
- newData.arrival4 = arrival4
- newData.pax4 = pax4
- newData.flightcrew1 = flightcrew1
- newData.flightcrew2 = flightcrew2
- newData.cabincrew2 = cabincrew2
- newData.cabincrew3 = cabincrew3
- newData.cabincrew4 = cabincrew4
- newData.cabincrew5 = cabincrew5
- */
 
 

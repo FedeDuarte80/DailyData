@@ -124,7 +124,6 @@ struct ContentView: View {
             .sheet(isPresented: $presentingSheet) { ModelView() }
             .navigationTitle("DailyData")
             .navigationBarTitleDisplayMode(.inline)
-          //  .background(Color("bg"))
             .onAppear {
                 let appearance = UINavigationBarAppearance()
                 appearance.backgroundColor = UIColor(Color("tb"))
@@ -133,7 +132,8 @@ struct ContentView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button { showingAlert.toggle() } label: { Text("Clear") } }
+                    Button { showingAlert.toggle() } label: { Text("Clear") }.disabled(flightdata.isEmpty)
+                }
                 ToolbarItem(placement: .navigationBarTrailing) { PlusButton() }
             }
             .confirmationDialog("Are you sure you want to delete all the data?", isPresented: $showingAlert, titleVisibility: .visible) {
@@ -167,38 +167,3 @@ struct MainView_Previews: PreviewProvider {
     }
 }
 
-/*
- static let moc = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
- static var previews: some View {
- let fl = Flightdata(context: moc)
- fl.destination1 = "MAD"
- fl.destination2 = "MAH"
- fl.registration = "JEQ"
- fl.flight1 = "1234"
- fl.departure1 = "1234"
- fl.arrival1 = "1234"
- fl.pax1 = "123"
- fl.flight2 = "1234"
- fl.departure2 = "1234"
- fl.arrival2 = "1234"
- fl.pax2 = "123"
- fl.flight3 = "1234"
- fl.departure3 = "1234"
- fl.arrival3 = "1234"
- fl.pax3 = "123"
- fl.flight4 = "1234"
- fl.departure4 = "1234"
- fl.arrival4 = "1234"
- fl.pax4 = "123"
- fl.flightcrew1 = "captain"
- fl.flightcrew2 = "firstofficer"
- fl.cabincrew2 = "cabincrew"
- fl.cabincrew3 = "cabincrew"
- fl.cabincrew4 = "cabincrew"
- fl.cabincrew5 = "cabincrew"
- 
- return ContentView()
- .environment(\.managedObjectContext, PersistentContainer.persistentContainer.viewContext)
- 
- }
- */
