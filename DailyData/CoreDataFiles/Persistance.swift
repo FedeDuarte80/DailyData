@@ -11,8 +11,16 @@ public class PersistentContainer {
     private init() {}
     
 // MARK: - Core Data stack
-    public static var persistentContainer: NSPersistentContainer = {
-            let container = NSPersistentContainer(name: "CoreDataModel") // CDModel   name
+    public static var persistentContainer: NSPersistentCloudKitContainer = {
+            let container = NSPersistentCloudKitContainer(name: "CoreDataModel") // CDModel   name
+            
+        guard let description = container.persistentStoreDescriptions.first else {
+            fatalError("No description found")
+        }
+        description.setOption(true as NSObject, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+        // https://www.youtube.com/watch?v=TsfOYHbf4Ew
+        
+        
             container.loadPersistentStores(completionHandler: { (storeDescription, error) in
                     if let error = error as NSError? {
                             fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -20,6 +28,9 @@ public class PersistentContainer {
             })
             container.viewContext.automaticallyMergesChangesFromParent = true
             container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.processUpdate), name: .NSPersistentStoreRemoteChange, object: nil)
+        
             return container
     }()
     
@@ -35,6 +46,20 @@ public class PersistentContainer {
                     }
             }
     }
+    @objc
+    func processUpdate(notificacion: NSNotification) {
+        operationQueue.addOperation {
+            
+        }
+    }
+    
+    lazy var operationQueue: OperationQueue = {
+        var queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 1
+        return queue
+    }()
+    
+    
     
     static func deleteBatch() {
         print("deleteBatch Called")

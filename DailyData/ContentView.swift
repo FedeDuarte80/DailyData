@@ -2,7 +2,9 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @FetchRequest(entity: Flightdata.entity(), sortDescriptors: []) var flightdata: FetchedResults<Flightdata>
+//    @FetchRequest(entity: Flightdata.entity(), sortDescriptors: []) var flightdata: FetchedResults<Flightdata>
+    
+    @FetchRequest(fetchRequest: Flightdata.getFlightdata()) var flightdata: FetchedResults<Flightdata>
     @State private var presentingSheet = false
     @State private var showingAlert = false
     var body: some View {

@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8826280B27FE239F00DB68FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8826280A27FE239F00DB68FA /* Assets.xcassets */; };
+		8826281127FE239F00DB68FA /* DailyDataWatchApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8826281027FE239F00DB68FA /* DailyDataWatchApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8826281627FE239F00DB68FA /* DailyDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8826281527FE239F00DB68FA /* DailyDataApp.swift */; };
+		8826281827FE239F00DB68FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8826281727FE239F00DB68FA /* ContentView.swift */; };
+		8826281A27FE239F00DB68FA /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8826281927FE239F00DB68FA /* NotificationController.swift */; };
+		8826281C27FE239F00DB68FA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8826281B27FE239F00DB68FA /* NotificationView.swift */; };
+		8826281E27FE239F00DB68FA /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8826281D27FE239F00DB68FA /* ComplicationController.swift */; };
+		8826282027FE23A000DB68FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8826281F27FE23A000DB68FA /* Assets.xcassets */; };
+		8826282327FE23A000DB68FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8826282227FE23A000DB68FA /* Preview Assets.xcassets */; };
+		8826282827FE23A000DB68FA /* DailyDataWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8826280827FE239E00DB68FA /* DailyDataWatchApp.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8826283527FE3C9A00DB68FA /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8826283427FE3C9A00DB68FA /* CloudKit.framework */; };
+		8826283727FE4E7700DB68FA /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 883ED56A27FA09FA0015BB3A /* CoreDataModel.xcdatamodeld */; };
+		8826283827FE4E7A00DB68FA /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED56D27FA0A090015BB3A /* Persistance.swift */; };
+		8826283927FE4E7D00DB68FA /* Flightdata+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED56F27FA0BBC0015BB3A /* Flightdata+Extensions.swift */; };
+		8826283A27FE4E7F00DB68FA /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88477AA827FB6F3E001DB1BE /* CoreDataHelper.swift */; };
 		883ED55827FA04A60015BB3A /* DailyDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED55727FA04A60015BB3A /* DailyDataApp.swift */; };
 		883ED55C27FA04A70015BB3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 883ED55B27FA04A70015BB3A /* Assets.xcassets */; };
 		883ED55F27FA04A70015BB3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 883ED55E27FA04A70015BB3A /* Preview Assets.xcassets */; };
@@ -19,8 +34,65 @@
 		88477AA927FB6F3E001DB1BE /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88477AA827FB6F3E001DB1BE /* CoreDataHelper.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8826281227FE239F00DB68FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 883ED54C27FA04A60015BB3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8826280F27FE239F00DB68FA;
+			remoteInfo = "DailyDataWatchApp WatchKit Extension";
+		};
+		8826282627FE23A000DB68FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 883ED54C27FA04A60015BB3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8826280727FE239E00DB68FA;
+			remoteInfo = DailyDataWatchApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8826282C27FE23A000DB68FA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8826281127FE239F00DB68FA /* DailyDataWatchApp WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8826283027FE23A000DB68FA /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				8826282827FE23A000DB68FA /* DailyDataWatchApp.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		8826280427FDEACB00DB68FA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8826280527FE0F9800DB68FA /* DailyData.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailyData.entitlements; sourceTree = "<group>"; };
+		8826280827FE239E00DB68FA /* DailyDataWatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDataWatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8826280A27FE239F00DB68FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8826281027FE239F00DB68FA /* DailyDataWatchApp WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DailyDataWatchApp WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8826281527FE239F00DB68FA /* DailyDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDataApp.swift; sourceTree = "<group>"; };
+		8826281727FE239F00DB68FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8826281927FE239F00DB68FA /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		8826281B27FE239F00DB68FA /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		8826281D27FE239F00DB68FA /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		8826281F27FE23A000DB68FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8826282227FE23A000DB68FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8826282427FE23A000DB68FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8826282527FE23A000DB68FA /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		8826283427FE3C9A00DB68FA /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		8826283627FE3CF600DB68FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		883ED55427FA04A60015BB3A /* DailyData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		883ED55727FA04A60015BB3A /* DailyDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDataApp.swift; sourceTree = "<group>"; };
 		883ED55B27FA04A70015BB3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -35,21 +107,72 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		883ED55127FA04A60015BB3A /* Frameworks */ = {
+		8826280D27FE239F00DB68FA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		883ED55127FA04A60015BB3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8826283527FE3C9A00DB68FA /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8826280927FE239E00DB68FA /* DailyDataWatchApp */ = {
+			isa = PBXGroup;
+			children = (
+				8826280A27FE239F00DB68FA /* Assets.xcassets */,
+			);
+			path = DailyDataWatchApp;
+			sourceTree = "<group>";
+		};
+		8826281427FE239F00DB68FA /* DailyDataWatchApp WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8826281527FE239F00DB68FA /* DailyDataApp.swift */,
+				8826281727FE239F00DB68FA /* ContentView.swift */,
+				8826281927FE239F00DB68FA /* NotificationController.swift */,
+				8826281B27FE239F00DB68FA /* NotificationView.swift */,
+				8826281D27FE239F00DB68FA /* ComplicationController.swift */,
+				8826281F27FE23A000DB68FA /* Assets.xcassets */,
+				8826282427FE23A000DB68FA /* Info.plist */,
+				8826282527FE23A000DB68FA /* PushNotificationPayload.apns */,
+				8826282127FE23A000DB68FA /* Preview Content */,
+			);
+			path = "DailyDataWatchApp WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		8826282127FE23A000DB68FA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8826282227FE23A000DB68FA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8826283327FE3C9A00DB68FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8826283427FE3C9A00DB68FA /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		883ED54B27FA04A60015BB3A = {
 			isa = PBXGroup;
 			children = (
 				883ED55627FA04A60015BB3A /* DailyData */,
+				8826280927FE239E00DB68FA /* DailyDataWatchApp */,
+				8826281427FE239F00DB68FA /* DailyDataWatchApp WatchKit Extension */,
 				883ED55527FA04A60015BB3A /* Products */,
+				8826283327FE3C9A00DB68FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				883ED55427FA04A60015BB3A /* DailyData.app */,
+				8826280827FE239E00DB68FA /* DailyDataWatchApp.app */,
+				8826281027FE239F00DB68FA /* DailyDataWatchApp WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,6 +189,8 @@
 		883ED55627FA04A60015BB3A /* DailyData */ = {
 			isa = PBXGroup;
 			children = (
+				8826283627FE3CF600DB68FA /* Info.plist */,
+				8826280527FE0F9800DB68FA /* DailyData.entitlements */,
 				8826280427FDEACB00DB68FA /* README.md */,
 				883ED55727FA04A60015BB3A /* DailyDataApp.swift */,
 				883ED57527FA5F970015BB3A /* ContentView.swift */,
@@ -98,6 +225,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8826280727FE239E00DB68FA /* DailyDataWatchApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8826282D27FE23A000DB68FA /* Build configuration list for PBXNativeTarget "DailyDataWatchApp" */;
+			buildPhases = (
+				8826280627FE239E00DB68FA /* Resources */,
+				8826282C27FE23A000DB68FA /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8826281327FE239F00DB68FA /* PBXTargetDependency */,
+			);
+			name = DailyDataWatchApp;
+			productName = DailyDataWatchApp;
+			productReference = 8826280827FE239E00DB68FA /* DailyDataWatchApp.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		8826280F27FE239F00DB68FA /* DailyDataWatchApp WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8826282927FE23A000DB68FA /* Build configuration list for PBXNativeTarget "DailyDataWatchApp WatchKit Extension" */;
+			buildPhases = (
+				8826280C27FE239F00DB68FA /* Sources */,
+				8826280D27FE239F00DB68FA /* Frameworks */,
+				8826280E27FE239F00DB68FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DailyDataWatchApp WatchKit Extension";
+			productName = "DailyDataWatchApp WatchKit Extension";
+			productReference = 8826281027FE239F00DB68FA /* DailyDataWatchApp WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		883ED55327FA04A60015BB3A /* DailyData */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 883ED56227FA04A70015BB3A /* Build configuration list for PBXNativeTarget "DailyData" */;
@@ -105,10 +266,12 @@
 				883ED55027FA04A60015BB3A /* Sources */,
 				883ED55127FA04A60015BB3A /* Frameworks */,
 				883ED55227FA04A60015BB3A /* Resources */,
+				8826283027FE23A000DB68FA /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8826282727FE23A000DB68FA /* PBXTargetDependency */,
 			);
 			name = DailyData;
 			productName = DailyData;
@@ -125,6 +288,12 @@
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					8826280727FE239E00DB68FA = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					8826280F27FE239F00DB68FA = {
+						CreatedOnToolsVersion = 13.3;
+					};
 					883ED55327FA04A60015BB3A = {
 						CreatedOnToolsVersion = 13.3;
 					};
@@ -144,11 +313,30 @@
 			projectRoot = "";
 			targets = (
 				883ED55327FA04A60015BB3A /* DailyData */,
+				8826280727FE239E00DB68FA /* DailyDataWatchApp */,
+				8826280F27FE239F00DB68FA /* DailyDataWatchApp WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8826280627FE239E00DB68FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8826280B27FE239F00DB68FA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8826280E27FE239F00DB68FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8826282327FE23A000DB68FA /* Preview Assets.xcassets in Resources */,
+				8826282027FE23A000DB68FA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		883ED55227FA04A60015BB3A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -161,6 +349,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8826280C27FE239F00DB68FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8826283827FE4E7A00DB68FA /* Persistance.swift in Sources */,
+				8826283927FE4E7D00DB68FA /* Flightdata+Extensions.swift in Sources */,
+				8826281A27FE239F00DB68FA /* NotificationController.swift in Sources */,
+				8826281827FE239F00DB68FA /* ContentView.swift in Sources */,
+				8826283727FE4E7700DB68FA /* CoreDataModel.xcdatamodeld in Sources */,
+				8826281E27FE239F00DB68FA /* ComplicationController.swift in Sources */,
+				8826283A27FE4E7F00DB68FA /* CoreDataHelper.swift in Sources */,
+				8826281627FE239F00DB68FA /* DailyDataApp.swift in Sources */,
+				8826281C27FE239F00DB68FA /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		883ED55027FA04A60015BB3A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -178,7 +382,134 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8826281327FE239F00DB68FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8826280F27FE239F00DB68FA /* DailyDataWatchApp WatchKit Extension */;
+			targetProxy = 8826281227FE239F00DB68FA /* PBXContainerItemProxy */;
+		};
+		8826282727FE23A000DB68FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8826280727FE239E00DB68FA /* DailyDataWatchApp */;
+			targetProxy = 8826282627FE23A000DB68FA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		8826282A27FE23A000DB68FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DailyDataWatchApp WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = XYVD428QLW;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DailyDataWatchApp WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "DailyDataWatchApp WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fede.DailyData.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		8826282B27FE23A000DB68FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DailyDataWatchApp WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = XYVD428QLW;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DailyDataWatchApp WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "DailyDataWatchApp WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fede.DailyData.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		8826282E27FE23A000DB68FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XYVD428QLW;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = DailyDataWatchApp_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = DailyDataWatchApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.fede.DailyData;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fede.DailyData.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		8826282F27FE23A000DB68FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XYVD428QLW;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = DailyDataWatchApp_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = DailyDataWatchApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.fede.DailyData;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fede.DailyData.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
 		883ED56027FA04A70015BB3A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -298,12 +629,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DailyData/DailyData.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DailyData/Preview Content\"";
 				DEVELOPMENT_TEAM = XYVD428QLW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DailyData/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -328,12 +661,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DailyData/DailyData.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DailyData/Preview Content\"";
 				DEVELOPMENT_TEAM = XYVD428QLW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DailyData/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -356,6 +691,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8826282927FE23A000DB68FA /* Build configuration list for PBXNativeTarget "DailyDataWatchApp WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8826282A27FE23A000DB68FA /* Debug */,
+				8826282B27FE23A000DB68FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8826282D27FE23A000DB68FA /* Build configuration list for PBXNativeTarget "DailyDataWatchApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8826282E27FE23A000DB68FA /* Debug */,
+				8826282F27FE23A000DB68FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		883ED54F27FA04A60015BB3A /* Build configuration list for PBXProject "DailyData" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

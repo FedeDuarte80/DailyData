@@ -43,6 +43,12 @@ extension Flightdata {
     
 }
 extension Flightdata {
+    static func getFlightdata() -> NSFetchRequest<Flightdata>{
+        let request = Flightdata.fetchRequest() 
+        request.sortDescriptors = []
+        return request
+    }
+    
 //    static func deleteData() {
 //        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Flightdata")
 //        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
