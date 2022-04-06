@@ -2,8 +2,9 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @State private var presentingSheet = false
     @FetchRequest(entity: Flightdata.entity(), sortDescriptors: []) var flightdata: FetchedResults<Flightdata>
+    @State private var presentingSheet = false
+    @State private var showingAlert = false
     var body: some View {
         NavigationView {
             ScrollView {
@@ -11,7 +12,7 @@ struct ContentView: View {
                     HStack {
                         // MARK: - DESTINATION
                         VStack(alignment: .leading, spacing: 10) {
-                            Text("Destination:")
+                            Text("Destination:").modifier(Labels())
                             HStack {
                                 Text(fl.destination1Name)
                                 Text("  -  ")
@@ -21,9 +22,9 @@ struct ContentView: View {
                         Spacer()
                         // MARK: - REGISTRATION
                         VStack(alignment: .leading, spacing: 10) {
-                            Text("AC Registration: ")
+                            Text("AC Registration: ").modifier(Labels())
                             HStack {
-                                Text("EC - ")
+                                Text("EC - ").modifier(Labels())
                                 Text(fl.registrationName)
                             } // HS
                         } // VS
@@ -33,7 +34,7 @@ struct ContentView: View {
                     // MARK: - FLIGHTS
                     HStack(spacing: 35) {
                         VStack(spacing: 14) {
-                            Text("Flight Nº")
+                            Text("Flight Nº").modifier(Labels())
                             VStack(spacing: 14) {
                                 Text(fl.flight1Name)
                                 Text(fl.flight2Name)
@@ -43,7 +44,7 @@ struct ContentView: View {
                         } // VS
                         
                         VStack(spacing: 14) {
-                            Text("ETD")
+                            Text("ETD").modifier(Labels())
                             VStack(spacing: 14) {
                                 Text(fl.departure1Name)
                                 Text(fl.departure2Name)
@@ -53,7 +54,7 @@ struct ContentView: View {
                         } // VS
                         
                         VStack(spacing: 14) {
-                            Text("ETA")
+                            Text("ETA").modifier(Labels())
                             VStack(spacing: 14) {
                                 Text(fl.arrival1Name)
                                 Text(fl.arrival2Name)
@@ -63,7 +64,7 @@ struct ContentView: View {
                         } // VS
                         
                         VStack(spacing: 14) {
-                            Text("PAX")
+                            Text("PAX").modifier(Labels())
                             VStack(spacing: 14) {
                                 Text(fl.pax1Name)
                                 Text(fl.pax2Name)
@@ -74,43 +75,46 @@ struct ContentView: View {
                     } // HS
                     Divider().padding(.vertical, 5)
                     // MARK: - CREW
-                    Text("CREW")
+                    Text("CREW").modifier(Labels())
                     VStack(alignment: .leading, spacing: 20) {
                         HStack {
-                            Text("C - ")
+                            Text("C - ").modifier(Labels())
                             Text(fl.flightcrew1Name)
                             Spacer()
                         } // HS
                         
                         HStack {
-                            Text("F - ")
+                            Text("F - ").modifier(Labels())
                             Text(fl.flightcrew2Name)
                             Spacer()
                         } // HS
                         
                         HStack {
-                            Text("2 - ")
+                            Text("2 - ").modifier(Labels())
                             Text(fl.cabincrew2Name)
                             Spacer()
                         } // HS
                         
                         HStack {
-                            Text("3 - ")
+                            Text("3 - ").modifier(Labels())
                             Text(fl.cabincrew3Name)
                             Spacer()
                         } // HS
                         
                         HStack {
-                            Text("4 - ")
+                            Text("4 - ").modifier(Labels())
+                                .opacity(fl.cabincrew4Name.isEmpty ? 0 : 1)
                             Text(fl.cabincrew4Name)
                             Spacer()
                         } // HS
                         
                         HStack {
-                            Text("5 - ")
+                            Text("5 - ").modifier(Labels())
+                                .opacity(fl.cabincrew5Name.isEmpty ? 0 : 1)
                             Text(fl.cabincrew5Name)
                             Spacer()
                         } // HS
+                        
                     } // VS
                     .padding(.vertical, 5)
                     Spacer()
@@ -120,7 +124,7 @@ struct ContentView: View {
             .sheet(isPresented: $presentingSheet) { ModelView() }
             .navigationTitle("DailyData")
             .navigationBarTitleDisplayMode(.inline)
-            .background(Color("bg"))
+          //  .background(Color("bg"))
             .onAppear {
                 let appearance = UINavigationBarAppearance()
                 appearance.backgroundColor = UIColor(Color("tb"))
@@ -128,13 +132,16 @@ struct ContentView: View {
                 UINavigationBar.appearance().scrollEdgeAppearance = appearance
             }
             .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button { showingAlert.toggle() } label: { Text("Clear") } }
                 ToolbarItem(placement: .navigationBarTrailing) { PlusButton() }
             }
-            
+            .confirmationDialog("Are you sure you want to delete all the data?", isPresented: $showingAlert, titleVisibility: .visible) {
+                Button("DELETE ALL", role: .destructive) { PersistentContainer.deleteBatch() }
+            }
         }// NV
         .navigationViewStyle(.stack)
     }
-    
     // MARK: - FUNCTIONS
     func PlusButton() -> some View {
         Button(action: { presentingSheet = true }) {
