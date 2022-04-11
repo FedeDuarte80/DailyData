@@ -46,7 +46,7 @@ struct ContentView: View {
                 
                 // MARK: - Crew
                 Divider()
-                VStack {
+                VStack { // Needed due max 10 items
                     Text(fl.flightcrew1Name)
                     Text(fl.flightcrew2Name)
                     Text(fl.cabincrew2Name)

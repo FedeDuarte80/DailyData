@@ -43,12 +43,55 @@ extension Flightdata {
     
 }
 extension Flightdata {
+    
     static func getFlightdata() -> NSFetchRequest<Flightdata>{
         let request = Flightdata.fetchRequest() 
         request.sortDescriptors = []
         return request
     }
     
+    class func addFlightsData(des1: String, des2: String, reg: String, fli1: String, dep1: String, arr1: String, pa1: String,  fli2: String, dep2: String, arr2: String, pa2: String,  fli3: String, dep3: String, arr3: String, pa3: String,  fli4: String, dep4: String, arr4: String, pa4: String, flig1: String, flig2: String, cab2: String, cab3: String, cab4: String, cab5: String) {
+        let newData = Flightdata(context: PersistentContainer.context)
+        newData.destination1 = des1
+        newData.destination2 = des2
+        newData.registration = reg
+        newData.flight1 = fli1
+        newData.departure1 = dep1
+        newData.arrival1 = arr1
+        newData.pax1 = pa1
+        newData.flight2 = fli2
+        newData.departure2 = dep2
+        newData.arrival2 = arr2
+        newData.pax2 = pa2
+        newData.flight3 = fli3
+        newData.departure3 = dep3
+        newData.arrival3 = arr3
+        newData.pax3 = pa3
+        newData.flight4 = fli4
+        newData.departure4 = dep4
+        newData.arrival4 = arr4
+        newData.pax4 = pa4
+        newData.flightcrew1 = flig1
+        newData.flightcrew2 = flig2
+        newData.cabincrew2 = cab2
+        newData.cabincrew3 = cab3
+        newData.cabincrew4 = cab4
+        newData.cabincrew5 = cab5
+        PersistentContainer.saveContext()
+    }
+}
+/*
+ public static func deleteContext () {
+     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Flightdata")
+     let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+     do {
+         try managedObjectContext!.executeRequest(batchDeleteRequest)
+     } catch {
+         print("Delete all data didnt work!")
+     }
+ }
+ */
+
 //    static func deleteData() {
 //        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Flightdata")
 //        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
@@ -62,15 +105,3 @@ extension Flightdata {
 
 
     
-}
-/*
- public static func deleteContext () {
-     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Flightdata")
-     let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-     do {
-         try managedObjectContext!.executeRequest(batchDeleteRequest)
-     } catch {
-         print("Delete all data didnt work!")
-     }
- }
- */

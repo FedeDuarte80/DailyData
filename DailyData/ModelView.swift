@@ -3,8 +3,7 @@ import CoreData
 
 struct ModelView: View {
     @Environment(\.dismiss) var dismiss
-    @Environment(\.managedObjectContext) var moc
-    
+    @Environment(\.managedObjectContext) var moc 
     @State var lastSubmit: String = "None"
     @FocusState var focus: OrderField?
     enum OrderField: Int, Hashable, CaseIterable {
@@ -90,14 +89,14 @@ struct ModelView: View {
                 HStack {
 // MARK: - DESTINATION
                     VStack(alignment: .leading) {
-                        Text("Destination: ").modifier(Labels())
+                        LabelView(label: "Destionation: ")
                         HStack {
                             TextField("ZRH", text: $destination1).modifier(DayDetails())
                                 .onSubmit { lastSubmit = destination1
                                     if let focus = focus { self.focus = focus.next() } }
                                 .focused($focus, equals: .destination1)
                                 .limitInputLength(value: $destination1, length: 3)
-                            Text("-").modifier(Labels())
+                            LabelView(label: "-")
                             TextField("AGP", text: $destination2).modifier(DayDetails())
                                 .onSubmit { lastSubmit = destination2
                                     if let focus = focus { self.focus = focus.next() } }
@@ -108,7 +107,7 @@ struct ModelView: View {
                     Spacer()
 // MARK: - REGISTRATION
                     VStack(alignment: .leading) {
-                        Text("AC Registration: ").modifier(Labels())
+                        LabelView(label: "AC Registration: ")
                         HStack {
                             Text("EC - ").modifier(Labels())
                             TextField("JSY", text: $registration).modifier(DayDetails())
@@ -124,7 +123,7 @@ struct ModelView: View {
 // MARK: - FLIGHTS
                 HStack(spacing: 30) {
                     VStack(spacing: 14) {
-                        Text("Flight Nº").modifier(Labels())
+                        LabelView(label: "Flight Nº")
                         VStack(spacing: 14) {
                         TextField("1234", text: $flight1)
                                 .onSubmit { lastSubmit = flight1
@@ -149,7 +148,7 @@ struct ModelView: View {
                         }.modifier(FlightsDetails())
                     } // VS
                     VStack(spacing: 14) {
-                        Text("ETD").modifier(Labels())
+                        LabelView(label: "ETD")
                         VStack(spacing: 14) {
                         TextField("5678", text: $departure1)
                                 .onSubmit { lastSubmit = departure1
@@ -174,7 +173,7 @@ struct ModelView: View {
                         }.modifier(FlightsDetails())
                     } // VS
                     VStack(spacing: 14) {
-                        Text("ETA").modifier(Labels())
+                        LabelView(label: "ETA")
                         VStack(spacing: 14) {
                         TextField("9012", text: $arrival1)
                                 .onSubmit { lastSubmit = arrival1
@@ -199,7 +198,7 @@ struct ModelView: View {
                         }.modifier(FlightsDetails())
                     } // VS
                     VStack(spacing: 14) {
-                        Text("PAX").modifier(Labels())
+                        LabelView(label: "PAX")
                         VStack(spacing: 14) {
                         TextField("345", text: $pax1)
                                 .onSubmit { lastSubmit = pax1
@@ -226,45 +225,45 @@ struct ModelView: View {
                 } // HS
                 Divider().padding(.vertical, 5)
 // MARK: - CREW
-                Text("CREW").modifier(Labels())
+                LabelView(label: "CREW")
                 VStack(spacing: 20) {
                     HStack {
-                        Text("C - ").modifier(Labels())
+                        LabelView(label: "C - ")
                         TextField("Flight crew 1", text: $flightcrew1).modifier(CrewDetails())
                             .onSubmit { lastSubmit = flightcrew1
                                 if let focus = focus { self.focus = focus.next() } }
                             .focused($focus, equals: .flightcrew1)
                     }
                     HStack {
-                        Text("F - ").modifier(Labels())
+                        LabelView(label: "F - ")
                         TextField("Flight crew 2", text: $flightcrew2).modifier(CrewDetails())
                             .onSubmit { lastSubmit = flightcrew2
                                 if let focus = focus { self.focus = focus.next() } }
                             .focused($focus, equals: .flightcrew2)
                     }
                     HStack {
-                        Text("2 - ").modifier(Labels())
+                        LabelView(label: "2 - ")
                         TextField("Cabin crew 2", text: $cabincrew2).modifier(CrewDetails())
                             .onSubmit { lastSubmit = cabincrew2
                                 if let focus = focus { self.focus = focus.next() } }
                             .focused($focus, equals: .cabincrew2)
                     }
                     HStack {
-                        Text("3 - ").modifier(Labels())
+                        LabelView(label: "3 - ")
                         TextField("Cabin crew 3", text: $cabincrew3).modifier(CrewDetails())
                             .onSubmit { lastSubmit = cabincrew3
                                 if let focus = focus { self.focus = focus.next() } }
                             .focused($focus, equals: .cabincrew3)
                     }
                     HStack {
-                        Text("4 - ").modifier(Labels())
+                        LabelView(label: "4 - ")
                         TextField("Cabin crew 4", text: $cabincrew4).modifier(CrewDetailsDone())
                             .onSubmit { lastSubmit = cabincrew4
                                 if let focus = focus { self.focus = focus.next() } }
                             .focused($focus, equals: .cabincrew4)
                     }
                     HStack {
-                        Text("B - ").modifier(Labels())
+                        LabelView(label: "B - ")
                         TextField("Cabin crew 5", text: $cabincrew5).modifier(CrewDetailsDone())
                             .onSubmit { lastSubmit = cabincrew5
                                 if let focus = focus { self.focus = focus.next() } }
@@ -276,70 +275,58 @@ struct ModelView: View {
             .padding()
             .navigationTitle("Today's info")
             .navigationBarTitleDisplayMode(.inline)
-            .onAppear {
-                let appearance = UINavigationBarAppearance()
-                appearance.backgroundColor = UIColor(Color("tb"))
-                UINavigationBar.appearance().standardAppearance = appearance
-                UINavigationBar.appearance().scrollEdgeAppearance = appearance
-            }
+            .onAppear { addTabColor() }
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) { SaveButton() }
+                ToolbarItem(placement: .navigationBarTrailing) { saveDataButton() }
                 ToolbarItemGroup(placement: .keyboard) {
-                    Button {
-                        if let focus = focus {
-                            self.focus = focus.previous()
-                        }
-                    } label: {
-                        Image(systemName: "chevron.left")
-                    }.disabled(!hasPreviousTextField)
+                    ChevronLeft()
                     Spacer()
-                    Button { focus = nil } label: { Text("Done") }
+                    DoneButton()
                     Spacer()
-                    Button {
-                        if let focus = focus { self.focus = focus.next() }
-                    } label: {
-                        Image(systemName: "chevron.right")
-                    }.disabled(!hasNextTextField)
+                    ChevronRight()
                 }
             }
-        } // NV
-        .navigationViewStyle(.stack)
+        }.navigationViewStyle(.stack)
     } // BY
 // MARK: - FUNCTIONS
-
-    func SaveButton() -> some View {
-        Button {
-            let newData = Flightdata(context: moc)
-            newData.destination1 = destination1
-            newData.destination2 = destination2
-            newData.registration = registration
-            newData.flight1 = flight1
-            newData.departure1 = departure1
-            newData.arrival1 = arrival1
-            newData.pax1 = pax1
-            newData.flight2 = flight2
-            newData.departure2 = departure2
-            newData.arrival2 = arrival2
-            newData.pax2 = pax2
-            newData.flight3 = flight3
-            newData.departure3 = departure3
-            newData.arrival3 = arrival3
-            newData.pax3 = pax3
-            newData.flight4 = flight4
-            newData.departure4 = departure4
-            newData.arrival4 = arrival4
-            newData.pax4 = pax4
-            newData.flightcrew1 = flightcrew1
-            newData.flightcrew2 = flightcrew2
-            newData.cabincrew2 = cabincrew2
-            newData.cabincrew3 = cabincrew3
-            newData.cabincrew4 = cabincrew4
-            newData.cabincrew5 = cabincrew5
-            PersistentContainer.saveContext()
+    func addTabColor() {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor(Color("tb"))
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+    }
+    func saveDataButton() -> some View {
+        Button(action: {
+            Flightdata.addFlightsData(
+                des1: destination1, des2: destination2, reg: registration,
+                fli1: flight1, dep1: departure1, arr1: arrival1, pa1: pax1,
+                fli2: flight2, dep2: departure2, arr2: arrival2, pa2: pax2,
+                fli3: flight3, dep3: departure3, arr3: arrival3, pa3: pax3,
+                fli4: flight4, dep4: departure4, arr4: arrival4, pa4: pax4,
+                flig1: flightcrew1, flig2: flightcrew2, cab2: cabincrew2, cab3: cabincrew3, cab4: cabincrew4, cab5: cabincrew5)
             dismiss()
-        } label: {
+        }) {
             Text("Save")
         }.disabled(destination1.isEmpty)
+    }
+    func ChevronLeft() -> some View {
+        Button {
+            if let focus = focus {
+                self.focus = focus.previous()
+            }
+        } label: {
+            Image(systemName: "chevron.left")
+        }.disabled(!hasPreviousTextField)
+    }
+    func DoneButton() -> some View {
+        Button { focus = nil } label: { Text("Done") }
+    }
+    func ChevronRight() -> some View {
+        Button {
+            if let focus = focus { self.focus = focus.next() }
+        } label: {
+            Image(systemName: "chevron.right")
+        }.disabled(!hasNextTextField)
     }
     var hasPreviousTextField: Bool {
         if let focus = focus, focus.previous() != nil {
@@ -362,10 +349,83 @@ struct ModelView: View {
 struct ModelView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
+          //  ModelView()
             ModelView()
-            ModelView().preferredColorScheme(.dark)
+                .preferredColorScheme(.dark)
         }
     }
 }
 
+struct LabelView: View {
+    let label: String
+    var body: some View {
+        Text(label).modifier(Labels())
+    }
+}
 
+
+/*
+ Button {
+     if let focus = focus {
+         self.focus = focus.previous()
+     }
+ } label: {
+     Image(systemName: "chevron.left")
+ }.disabled(!hasPreviousTextField)
+ Spacer()
+ Button { focus = nil } label: { Text("Done") }
+ Spacer()
+ Button {
+     if let focus = focus { self.focus = focus.next() }
+ } label: {
+     Image(systemName: "chevron.right")
+ }.disabled(!hasNextTextField)
+ */
+
+/*
+ func addData() {
+        Flightdata.addFlightsData(
+            des1: destination1, des2: destination2, reg: registration,
+            fli1: flight1, dep1: departure1, arr1: arrival1, pa1: pax1,
+            fli2: flight2, dep2: departure2, arr2: arrival2, pa2: pax2,
+            fli3: flight3, dep3: departure3, arr3: arrival3, pa3: pax3,
+            fli4: flight4, dep4: departure4, arr4: arrival4, pa4: pax4,
+            flig1: flightcrew1, flig2: flightcrew2, cab2: cabincrew2, cab3: cabincrew3, cab4: cabincrew4, cab5: cabincrew5)
+    }
+ 
+ 
+ func SaveButton() -> some View {
+     Button {
+         let newData = Flightdata(context: moc)
+         newData.destination1 = destination1
+         newData.destination2 = destination2
+         newData.registration = registration
+         newData.flight1 = flight1
+         newData.departure1 = departure1
+         newData.arrival1 = arrival1
+         newData.pax1 = pax1
+         newData.flight2 = flight2
+         newData.departure2 = departure2
+         newData.arrival2 = arrival2
+         newData.pax2 = pax2
+         newData.flight3 = flight3
+         newData.departure3 = departure3
+         newData.arrival3 = arrival3
+         newData.pax3 = pax3
+         newData.flight4 = flight4
+         newData.departure4 = departure4
+         newData.arrival4 = arrival4
+         newData.pax4 = pax4
+         newData.flightcrew1 = flightcrew1
+         newData.flightcrew2 = flightcrew2
+         newData.cabincrew2 = cabincrew2
+         newData.cabincrew3 = cabincrew3
+         newData.cabincrew4 = cabincrew4
+         newData.cabincrew5 = cabincrew5
+         PersistentContainer.saveContext()
+         dismiss()
+     } label: {
+         Text("Save")
+     }.disabled(destination1.isEmpty)
+ }
+ */

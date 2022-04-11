@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		881CC1D927FF59F600448471 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881CC1D827FF59F600448471 /* TestView.swift */; };
 		8826280B27FE239F00DB68FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8826280A27FE239F00DB68FA /* Assets.xcassets */; };
 		8826281127FE239F00DB68FA /* DailyDataWatchApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8826281027FE239F00DB68FA /* DailyDataWatchApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8826281627FE239F00DB68FA /* DailyDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8826281527FE239F00DB68FA /* DailyDataApp.swift */; };
@@ -21,7 +22,6 @@
 		8826283727FE4E7700DB68FA /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 883ED56A27FA09FA0015BB3A /* CoreDataModel.xcdatamodeld */; };
 		8826283827FE4E7A00DB68FA /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED56D27FA0A090015BB3A /* Persistance.swift */; };
 		8826283927FE4E7D00DB68FA /* Flightdata+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED56F27FA0BBC0015BB3A /* Flightdata+Extensions.swift */; };
-		8826283A27FE4E7F00DB68FA /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88477AA827FB6F3E001DB1BE /* CoreDataHelper.swift */; };
 		883ED55827FA04A60015BB3A /* DailyDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED55727FA04A60015BB3A /* DailyDataApp.swift */; };
 		883ED55C27FA04A70015BB3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 883ED55B27FA04A70015BB3A /* Assets.xcassets */; };
 		883ED55F27FA04A70015BB3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 883ED55E27FA04A70015BB3A /* Preview Assets.xcassets */; };
@@ -31,7 +31,7 @@
 		883ED57427FA1B5F0015BB3A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED57327FA1B5F0015BB3A /* Helpers.swift */; };
 		883ED57627FA5F970015BB3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED57527FA5F970015BB3A /* ContentView.swift */; };
 		883ED57827FA5FA40015BB3A /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED57727FA5FA40015BB3A /* ModelView.swift */; };
-		88477AA927FB6F3E001DB1BE /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88477AA827FB6F3E001DB1BE /* CoreDataHelper.swift */; };
+		8881D1BC2804DBDC00E9CEDA /* HelperStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8881D1BB2804DBDC00E9CEDA /* HelperStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +77,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		881CC1D827FF59F600448471 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		8826280427FDEACB00DB68FA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8826280527FE0F9800DB68FA /* DailyData.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailyData.entitlements; sourceTree = "<group>"; };
 		8826280827FE239E00DB68FA /* DailyDataWatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDataWatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +104,7 @@
 		883ED57327FA1B5F0015BB3A /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		883ED57527FA5F970015BB3A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		883ED57727FA5FA40015BB3A /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
-		88477AA827FB6F3E001DB1BE /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		8881D1BB2804DBDC00E9CEDA /* HelperStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +139,7 @@
 			children = (
 				8826281527FE239F00DB68FA /* DailyDataApp.swift */,
 				8826281727FE239F00DB68FA /* ContentView.swift */,
+				881CC1D827FF59F600448471 /* TestView.swift */,
 				8826281927FE239F00DB68FA /* NotificationController.swift */,
 				8826281B27FE239F00DB68FA /* NotificationView.swift */,
 				8826281D27FE239F00DB68FA /* ComplicationController.swift */,
@@ -196,6 +198,7 @@
 				883ED57527FA5F970015BB3A /* ContentView.swift */,
 				883ED57727FA5FA40015BB3A /* ModelView.swift */,
 				883ED57327FA1B5F0015BB3A /* Helpers.swift */,
+				8881D1BB2804DBDC00E9CEDA /* HelperStruct.swift */,
 				883ED56927FA09E90015BB3A /* CoreDataFiles */,
 				883ED55B27FA04A70015BB3A /* Assets.xcassets */,
 				883ED55D27FA04A70015BB3A /* Preview Content */,
@@ -217,7 +220,6 @@
 				883ED56A27FA09FA0015BB3A /* CoreDataModel.xcdatamodeld */,
 				883ED56D27FA0A090015BB3A /* Persistance.swift */,
 				883ED56F27FA0BBC0015BB3A /* Flightdata+Extensions.swift */,
-				88477AA827FB6F3E001DB1BE /* CoreDataHelper.swift */,
 			);
 			path = CoreDataFiles;
 			sourceTree = "<group>";
@@ -359,7 +361,7 @@
 				8826281827FE239F00DB68FA /* ContentView.swift in Sources */,
 				8826283727FE4E7700DB68FA /* CoreDataModel.xcdatamodeld in Sources */,
 				8826281E27FE239F00DB68FA /* ComplicationController.swift in Sources */,
-				8826283A27FE4E7F00DB68FA /* CoreDataHelper.swift in Sources */,
+				881CC1D927FF59F600448471 /* TestView.swift in Sources */,
 				8826281627FE239F00DB68FA /* DailyDataApp.swift in Sources */,
 				8826281C27FE239F00DB68FA /* NotificationView.swift in Sources */,
 			);
@@ -369,13 +371,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88477AA927FB6F3E001DB1BE /* CoreDataHelper.swift in Sources */,
 				883ED57627FA5F970015BB3A /* ContentView.swift in Sources */,
 				883ED57427FA1B5F0015BB3A /* Helpers.swift in Sources */,
 				883ED57827FA5FA40015BB3A /* ModelView.swift in Sources */,
 				883ED56E27FA0A090015BB3A /* Persistance.swift in Sources */,
 				883ED55827FA04A60015BB3A /* DailyDataApp.swift in Sources */,
 				883ED57027FA0BBC0015BB3A /* Flightdata+Extensions.swift in Sources */,
+				8881D1BC2804DBDC00E9CEDA /* HelperStruct.swift in Sources */,
 				883ED56C27FA09FA0015BB3A /* CoreDataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
