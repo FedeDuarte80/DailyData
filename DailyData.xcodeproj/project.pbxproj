@@ -29,9 +29,14 @@
 		883ED56E27FA0A090015BB3A /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED56D27FA0A090015BB3A /* Persistance.swift */; };
 		883ED57027FA0BBC0015BB3A /* Flightdata+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED56F27FA0BBC0015BB3A /* Flightdata+Extensions.swift */; };
 		883ED57427FA1B5F0015BB3A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED57327FA1B5F0015BB3A /* Helpers.swift */; };
-		883ED57627FA5F970015BB3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED57527FA5F970015BB3A /* ContentView.swift */; };
-		883ED57827FA5FA40015BB3A /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED57727FA5FA40015BB3A /* ModelView.swift */; };
 		8881D1BC2804DBDC00E9CEDA /* HelperStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8881D1BB2804DBDC00E9CEDA /* HelperStruct.swift */; };
+		88C9E6452805C9160062A519 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9E6442805C9160062A519 /* MainView.swift */; };
+		88C9E6472805C98F0062A519 /* InsertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9E6462805C98F0062A519 /* InsertView.swift */; };
+		88C9E6492805C9A60062A519 /* ShowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9E6482805C9A60062A519 /* ShowingView.swift */; };
+		88C9E64B2805C9AE0062A519 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9E64A2805C9AE0062A519 /* SettingsView.swift */; };
+		88C9E64E2805D34E0062A519 /* OldCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9E64D2805D34E0062A519 /* OldCode.swift */; };
+		88C9E6502805F6090062A519 /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9E64F2805F6090062A519 /* SeedData.swift */; };
+		88C9E6512805FB930062A519 /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9E64F2805F6090062A519 /* SeedData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,9 +107,13 @@
 		883ED56D27FA0A090015BB3A /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
 		883ED56F27FA0BBC0015BB3A /* Flightdata+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flightdata+Extensions.swift"; sourceTree = "<group>"; };
 		883ED57327FA1B5F0015BB3A /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		883ED57527FA5F970015BB3A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		883ED57727FA5FA40015BB3A /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
 		8881D1BB2804DBDC00E9CEDA /* HelperStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperStruct.swift; sourceTree = "<group>"; };
+		88C9E6442805C9160062A519 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		88C9E6462805C98F0062A519 /* InsertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertView.swift; sourceTree = "<group>"; };
+		88C9E6482805C9A60062A519 /* ShowingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingView.swift; sourceTree = "<group>"; };
+		88C9E64A2805C9AE0062A519 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		88C9E64D2805D34E0062A519 /* OldCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldCode.swift; sourceTree = "<group>"; };
+		88C9E64F2805F6090062A519 /* SeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				883ED55627FA04A60015BB3A /* DailyData */,
+				88C9E64D2805D34E0062A519 /* OldCode.swift */,
 				8826280927FE239E00DB68FA /* DailyDataWatchApp */,
 				8826281427FE239F00DB68FA /* DailyDataWatchApp WatchKit Extension */,
 				883ED55527FA04A60015BB3A /* Products */,
@@ -195,8 +205,10 @@
 				8826280527FE0F9800DB68FA /* DailyData.entitlements */,
 				8826280427FDEACB00DB68FA /* README.md */,
 				883ED55727FA04A60015BB3A /* DailyDataApp.swift */,
-				883ED57527FA5F970015BB3A /* ContentView.swift */,
-				883ED57727FA5FA40015BB3A /* ModelView.swift */,
+				88C9E6442805C9160062A519 /* MainView.swift */,
+				88C9E6462805C98F0062A519 /* InsertView.swift */,
+				88C9E6482805C9A60062A519 /* ShowingView.swift */,
+				88C9E64A2805C9AE0062A519 /* SettingsView.swift */,
 				883ED57327FA1B5F0015BB3A /* Helpers.swift */,
 				8881D1BB2804DBDC00E9CEDA /* HelperStruct.swift */,
 				883ED56927FA09E90015BB3A /* CoreDataFiles */,
@@ -220,6 +232,7 @@
 				883ED56A27FA09FA0015BB3A /* CoreDataModel.xcdatamodeld */,
 				883ED56D27FA0A090015BB3A /* Persistance.swift */,
 				883ED56F27FA0BBC0015BB3A /* Flightdata+Extensions.swift */,
+				88C9E64F2805F6090062A519 /* SeedData.swift */,
 			);
 			path = CoreDataFiles;
 			sourceTree = "<group>";
@@ -357,6 +370,7 @@
 			files = (
 				8826283827FE4E7A00DB68FA /* Persistance.swift in Sources */,
 				8826283927FE4E7D00DB68FA /* Flightdata+Extensions.swift in Sources */,
+				88C9E6512805FB930062A519 /* SeedData.swift in Sources */,
 				8826281A27FE239F00DB68FA /* NotificationController.swift in Sources */,
 				8826281827FE239F00DB68FA /* ContentView.swift in Sources */,
 				8826283727FE4E7700DB68FA /* CoreDataModel.xcdatamodeld in Sources */,
@@ -371,14 +385,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				883ED57627FA5F970015BB3A /* ContentView.swift in Sources */,
+				88C9E6452805C9160062A519 /* MainView.swift in Sources */,
 				883ED57427FA1B5F0015BB3A /* Helpers.swift in Sources */,
-				883ED57827FA5FA40015BB3A /* ModelView.swift in Sources */,
 				883ED56E27FA0A090015BB3A /* Persistance.swift in Sources */,
 				883ED55827FA04A60015BB3A /* DailyDataApp.swift in Sources */,
 				883ED57027FA0BBC0015BB3A /* Flightdata+Extensions.swift in Sources */,
+				88C9E64E2805D34E0062A519 /* OldCode.swift in Sources */,
 				8881D1BC2804DBDC00E9CEDA /* HelperStruct.swift in Sources */,
+				88C9E6492805C9A60062A519 /* ShowingView.swift in Sources */,
+				88C9E6502805F6090062A519 /* SeedData.swift in Sources */,
+				88C9E64B2805C9AE0062A519 /* SettingsView.swift in Sources */,
 				883ED56C27FA09FA0015BB3A /* CoreDataModel.xcdatamodeld in Sources */,
+				88C9E6472805C98F0062A519 /* InsertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

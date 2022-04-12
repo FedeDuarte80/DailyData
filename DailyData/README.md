@@ -18,7 +18,7 @@ iphone app where flights and crew data are loaded then shown on iwatch
 
 1. Choose File -> New -> Target
 2. From the templates window, choose “Watch App for iOS App” from the WatchOS tab and click Next
-3. 
+
 
 
 # CloudKit integration

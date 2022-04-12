@@ -5,7 +5,8 @@ struct DailyDataApp: App {
     let context = PersistentContainer.persistentContainer.viewContext
     var body: some Scene {
         WindowGroup {
-            ContentView()
+           // ContentView()
+            MainView()
                 .environment(\.managedObjectContext, context)
         }
     }

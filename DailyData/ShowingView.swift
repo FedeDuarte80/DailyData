@@ -1,14 +1,14 @@
+//  Created by Fede Duarte on 12/4/22.
+
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct ShowingView: View {
     @FetchRequest(fetchRequest: Flightdata.getFlightdata()) var flightdata: FetchedResults<Flightdata>
-    @Environment(\.managedObjectContext) var moc
-    @State private var presentingSheet = false
     @State private var showingAlert = false
     var body: some View {
         NavigationView {
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 ForEach(flightdata) { fl in
                     HStack {
                         DestinationView(dest1: fl.destination1Name, dest2: fl.destination2Name)
@@ -16,6 +16,7 @@ struct ContentView: View {
                         RegistrationView(reg1: fl.registrationName)
                         Spacer()
                     } // HS
+                    .padding(.vertical)
                     Divider().padding(.vertical, 5)
                     HStack(spacing: 35) {
                         FlightView(Label: "Flight Nº", a: fl.flight1Name, b: fl.flight2Name, c: fl.flight3Name, d: fl.flight4Name)
@@ -26,7 +27,7 @@ struct ContentView: View {
                     Divider().padding(.vertical, 5)
                     Text("CREW").modifier(Labels())
                     HStack {
-                        VStack(alignment: .leading, spacing: 20) {
+                        VStack(alignment: .leading, spacing: 34) {
                             CrewView(function: "C - ", name: fl.flightcrew1Name, opa: 1)
                             CrewView(function: "F - ", name: fl.flightcrew2Name, opa: 1)
                             CrewView(function: "2 - ", name: fl.cabincrew2Name, opa: 1)
@@ -40,13 +41,12 @@ struct ContentView: View {
                 } // FE
             }// SV
             .padding()
-            .sheet(isPresented: $presentingSheet) { ModelView() }
             .navigationTitle("DailyData")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear { addTabColor() }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) { ClearButton() }
-                ToolbarItem(placement: .navigationBarTrailing) { PlusButton() }
+                ToolbarItem(placement: .navigationBarTrailing) { addSeedData() }
             }
             .confirmationDialog("Are you sure you want to delete all the data?", isPresented: $showingAlert, titleVisibility: .visible) {
                 Button("DELETE ALL", role: .destructive) { PersistentContainer.deleteBatch() }
@@ -54,11 +54,6 @@ struct ContentView: View {
         }.navigationViewStyle(.stack)
     }
 // MARK: - FUNCTIONS
-    func PlusButton() -> some View {
-        Button(action: { presentingSheet = true }) {
-            Image(systemName: "plus")
-        }
-    }
     func ClearButton() -> some View {
         Button(action: { showingAlert.toggle() }) {
             Text("Clear").disabled(flightdata.isEmpty)
@@ -70,15 +65,44 @@ struct ContentView: View {
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
-}
-
-// MARK: - PREVIEW
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .preferredColorScheme(.dark)
-            .environment(\.managedObjectContext, PersistentContainer.persistentContainer.viewContext)
+    func addSeedData() -> some View {
+        Button(action: {
+        Flightdata.loadSeedData(into: PersistentContainer.persistentContainer.viewContext)
+        }) { Text("SeedData").disabled(!flightdata.isEmpty) } // Test
     }
 }
 
-
+struct ShowingView_Previews: PreviewProvider {
+    static var viewContext = PersistentContainer.persistentContainer.viewContext
+    static var previews: some View {
+        let s = Flightdata(context: viewContext)
+        s.destination1 = "DUB"
+        s.destination2 = "MAH"
+        s.registration = "LOP"
+        s.flight1 = "1234"
+        s.flight2 = "1234"
+        s.flight3 = "1234"
+        s.flight4 = "1234"
+        s.departure1 = "1234"
+        s.departure2 = "1234"
+        s.departure3 = "1234"
+        s.departure4 = "1234"
+        s.arrival1 = "1234"
+        s.arrival2 = "1234"
+        s.arrival3 = "1234"
+        s.arrival4 = "1234"
+        s.pax1 = "123"
+        s.pax2 = "123"
+        s.pax3 = "123"
+        s.pax4 = "123"
+        s.flightcrew1 = "QWERTY"
+        s.flightcrew2 = "QWERTY"
+        s.cabincrew2 = "QWERTY"
+        s.cabincrew3 = "QWERTY"
+        s.cabincrew4 = "QWERTY"
+        s.cabincrew5 = "QWERTY"
+        return ShowingView() .environment(\.managedObjectContext, PersistentContainer.persistentContainer.viewContext)
+            .preferredColorScheme(.dark)
+        
+    }
+}

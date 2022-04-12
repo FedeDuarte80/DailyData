@@ -5,41 +5,41 @@ import CoreData
 extension Flightdata {
     
     // 1
-    public var destination1Name: String { destination1 ?? "ZRH" }
-    public var destination2Name: String { destination2 ?? "AGP" }
-    public var registrationName: String { registration ?? "JSY" }
+    public var destination1Name: String { destination1 ?? "" }
+    public var destination2Name: String { destination2 ?? "" }
+    public var registrationName: String { registration ?? "" }
     
     // 2
-    public var flight1Name: String { flight1 ?? "1234" }
-    public var flight2Name: String { flight2 ?? "1234" }
-    public var flight3Name: String { flight3 ?? "1234" }
-    public var flight4Name: String { flight4 ?? "1234" }
+    public var flight1Name: String { flight1 ?? "" }
+    public var flight2Name: String { flight2 ?? "" }
+    public var flight3Name: String { flight3 ?? "" }
+    public var flight4Name: String { flight4 ?? "" }
     
     // 3
-    public var departure1Name: String { departure1 ?? "5678" }
-    public var departure2Name: String { departure2 ?? "5678" }
-    public var departure3Name: String { departure3 ?? "5678" }
-    public var departure4Name: String { departure4 ?? "5678" }
+    public var departure1Name: String { departure1 ?? "" }
+    public var departure2Name: String { departure2 ?? "" }
+    public var departure3Name: String { departure3 ?? "" }
+    public var departure4Name: String { departure4 ?? "" }
     
     // 4
-    public var arrival1Name: String { arrival1 ?? "9012" }
-    public var arrival2Name: String { arrival2 ?? "9012" }
-    public var arrival3Name: String { arrival3 ?? "9012" }
-    public var arrival4Name: String { arrival4 ?? "9012" }
+    public var arrival1Name: String { arrival1 ?? "" }
+    public var arrival2Name: String { arrival2 ?? "" }
+    public var arrival3Name: String { arrival3 ?? "" }
+    public var arrival4Name: String { arrival4 ?? "" }
     
     // 5
-    public var pax1Name: String { pax1 ?? "345" }
-    public var pax2Name: String { pax2 ?? "345" }
-    public var pax3Name: String { pax3 ?? "345" }
-    public var pax4Name: String { pax4 ?? "345" }
+    public var pax1Name: String { pax1 ?? "" }
+    public var pax2Name: String { pax2 ?? "" }
+    public var pax3Name: String { pax3 ?? "" }
+    public var pax4Name: String { pax4 ?? "" }
     
     // 6
-    public var flightcrew1Name: String { flightcrew1 ?? "FligthCrew1" }
-    public var flightcrew2Name: String { flightcrew2 ?? "FligthCrew2" }
-    public var cabincrew2Name: String { cabincrew2 ?? "CabinCrew2" }
-    public var cabincrew3Name: String { cabincrew3 ?? "CabinCrew3" }
-    public var cabincrew4Name: String { cabincrew4 ?? "CabinCrew4" }
-    public var cabincrew5Name: String { cabincrew5 ?? "CabinCrew5" }
+    public var flightcrew1Name: String { flightcrew1 ?? "" }
+    public var flightcrew2Name: String { flightcrew2 ?? "" }
+    public var cabincrew2Name: String { cabincrew2 ?? "" }
+    public var cabincrew3Name: String { cabincrew3 ?? "" }
+    public var cabincrew4Name: String { cabincrew4 ?? "" }
+    public var cabincrew5Name: String { cabincrew5 ?? "" }
     
 }
 extension Flightdata {
@@ -79,29 +79,37 @@ extension Flightdata {
         newData.cabincrew5 = cab5
         PersistentContainer.saveContext()
     }
+    static func loadSeedData(into context: NSManagedObjectContext) {
+        for flights in flightList {
+            let newData = Flightdata(context: context)
+            newData.destination1 = flights.destination1
+            newData.destination2 = flights.destination2
+            newData.registration = flights.registration
+            newData.flight1 = flights.flight1
+            newData.flight2 = flights.flight2
+            newData.flight3 = flights.flight3
+            newData.flight4 = flights.flight4
+            newData.departure1 = flights.departure1
+            newData.departure2 = flights.departure2
+            newData.departure3 = flights.departure3
+            newData.departure4 = flights.departure4
+            newData.arrival1 = flights.arrival1
+            newData.arrival2 = flights.arrival2
+            newData.arrival3 = flights.arrival3
+            newData.arrival4 = flights.arrival4
+            newData.pax1 = flights.pax1
+            newData.pax2 = flights.pax2
+            newData.pax3 = flights.pax3
+            newData.pax4 = flights.pax4
+            newData.flightcrew1 = flights.flightcrew1
+            newData.flightcrew2 = flights.flightcrew2
+            newData.cabincrew2 = flights.cabincrew2
+            newData.cabincrew3 = flights.cabincrew3
+            newData.cabincrew4 = flights.cabincrew4
+            newData.cabincrew5 = flights.cabincrew5
+        }
+        PersistentContainer.saveContext()
+        print("Loading seed data")
+    }
 }
-/*
- public static func deleteContext () {
-     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Flightdata")
-     let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-     do {
-         try managedObjectContext!.executeRequest(batchDeleteRequest)
-     } catch {
-         print("Delete all data didnt work!")
-     }
- }
- */
-
-//    static func deleteData() {
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Flightdata")
-//        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-//        do {
-//            try managedObjectContext?.executeRequest(batchDeleteRequest)
-//        } catch {
-//            print("Delete all data, didnt work")
-//        }
-//
-//    }
-
-
     
