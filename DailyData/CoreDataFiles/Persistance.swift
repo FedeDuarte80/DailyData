@@ -7,18 +7,26 @@ public class PersistentContainer {
             return persistentContainer.viewContext
     }
     
+    
 // MARK: - Initializer
     private init() {}
     
 // MARK: - Core Data stack
     public static var persistentContainer: NSPersistentCloudKitContainer = {
-            let container = NSPersistentCloudKitContainer(name: "CoreDataModel") // CDModel   name
             
+        let container = NSPersistentCloudKitContainer(name: "CoreDataModel") // CDModel
+
+        
+        
         guard let description = container.persistentStoreDescriptions.first else {
             fatalError("No description found")
         }
         description.setOption(true as NSObject, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
         // https://www.youtube.com/watch?v=TsfOYHbf4Ew
+        
+        description.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: "iCloud.fededuarte.dailydata")
+ //      description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+ //       description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
         
         
             container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -28,8 +36,6 @@ public class PersistentContainer {
             })
             container.viewContext.automaticallyMergesChangesFromParent = true
             container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.processUpdate), name: .NSPersistentStoreRemoteChange, object: nil)
         
             return container
     }()
@@ -88,14 +94,28 @@ public class PersistentContainer {
     }
 }
 
+// TEST
 
-//    static func deleteAll() {
-//        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Flightdata")
-//        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+//extension NSPersistentContainer {
 //
-//        do {
-//            try moc.execute(deleteRequest, with: persistentContainer.viewContext)
-//        } catch let error as NSError {
-//            // TODO: handle the error
-//        }
+//    /// Called when a certain managed object context has been saved from an external process. It should also be called on the context's queue.
+//    func viewContextDidSaveExternally() {
+//        // `refreshAllObjects` only refreshes objects from which the cache is invalid. With a staleness intervall of -1 the cache never invalidates.
+//        // We set the `stalenessInterval` to 0 to make sure that changes in the app extension get processed correctly.
+//        viewContext.stalenessInterval = 0
+//        viewContext.refreshAllObjects()
+//        viewContext.stalenessInterval = -1
+//        
+//        print("viewContextDidSaveExternally")
 //    }
+//}
+//
+class NSCustomPersistentContainer: NSPersistentContainer {
+    
+    override open class func defaultDirectoryURL() -> URL {
+        var storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.fededuarte.dailydata")
+        storeURL = storeURL?.appendingPathComponent("group.fededuarte.dailydata")
+        print("defaultDirectoryURL")
+        return storeURL!
+    }
+}

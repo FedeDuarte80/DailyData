@@ -3,7 +3,7 @@
 import SwiftUI
 
 struct InsertView: View {
-    @Environment(\.managedObjectContext) var moc
+//    @Environment(\.managedObjectContext) var moc
     @State var lastSubmit: String = "None"
     @FocusState var focus: OrderField?
     enum OrderField: Int, Hashable, CaseIterable {
@@ -80,7 +80,6 @@ struct InsertView: View {
     @State private var cabincrew3 = ""
     @State private var cabincrew4 = ""
     @State private var cabincrew5 = ""
-    
     
 // MARK: - BODY
     var body: some View {
@@ -365,7 +364,7 @@ struct InsertView: View {
         }.disabled(!hasPreviousTextField)
     }
     func DoneButton() -> some View {
-        Button { focus = nil } label: { Image(systemName: "chevron.down") }
+        Button { focus = nil } label: { Image(systemName: "keyboard.chevron.compact.down") }
     }
     func ChevronRight() -> some View {
         Button {

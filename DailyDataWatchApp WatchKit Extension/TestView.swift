@@ -65,5 +65,6 @@ struct TestView: View {
 struct TestView_Previews: PreviewProvider {
     static var previews: some View {
         TestView()
+            .previewDevice(PreviewDevice(rawValue: "Apple Watch Series 5 - 44mm"))
     }
 }

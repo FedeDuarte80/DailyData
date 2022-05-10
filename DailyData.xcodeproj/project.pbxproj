@@ -29,7 +29,10 @@
 		883ED56E27FA0A090015BB3A /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED56D27FA0A090015BB3A /* Persistance.swift */; };
 		883ED57027FA0BBC0015BB3A /* Flightdata+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED56F27FA0BBC0015BB3A /* Flightdata+Extensions.swift */; };
 		883ED57427FA1B5F0015BB3A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED57327FA1B5F0015BB3A /* Helpers.swift */; };
+		886D0433282485F50037F419 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8826281727FE239F00DB68FA /* ContentView.swift */; };
+		886D0434282485F90037F419 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881CC1D827FF59F600448471 /* TestView.swift */; };
 		8881D1BC2804DBDC00E9CEDA /* HelperStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8881D1BB2804DBDC00E9CEDA /* HelperStruct.swift */; };
+		889B0253280CCB9E0066CA95 /* SettingsDarkMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B0252280CCB9E0066CA95 /* SettingsDarkMode.swift */; };
 		88C9E6452805C9160062A519 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9E6442805C9160062A519 /* MainView.swift */; };
 		88C9E6472805C98F0062A519 /* InsertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9E6462805C98F0062A519 /* InsertView.swift */; };
 		88C9E6492805C9A60062A519 /* ShowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9E6482805C9A60062A519 /* ShowingView.swift */; };
@@ -107,7 +110,10 @@
 		883ED56D27FA0A090015BB3A /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
 		883ED56F27FA0BBC0015BB3A /* Flightdata+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flightdata+Extensions.swift"; sourceTree = "<group>"; };
 		883ED57327FA1B5F0015BB3A /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		886D04302824843D0037F419 /* DailyDataWatchApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailyDataWatchApp.entitlements; sourceTree = "<group>"; };
+		886D04312824844B0037F419 /* DailyDataWatchApp WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DailyDataWatchApp WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		8881D1BB2804DBDC00E9CEDA /* HelperStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperStruct.swift; sourceTree = "<group>"; };
+		889B0252280CCB9E0066CA95 /* SettingsDarkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDarkMode.swift; sourceTree = "<group>"; };
 		88C9E6442805C9160062A519 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		88C9E6462805C98F0062A519 /* InsertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertView.swift; sourceTree = "<group>"; };
 		88C9E6482805C9A60062A519 /* ShowingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingView.swift; sourceTree = "<group>"; };
@@ -138,6 +144,7 @@
 		8826280927FE239E00DB68FA /* DailyDataWatchApp */ = {
 			isa = PBXGroup;
 			children = (
+				886D04302824843D0037F419 /* DailyDataWatchApp.entitlements */,
 				8826280A27FE239F00DB68FA /* Assets.xcassets */,
 			);
 			path = DailyDataWatchApp;
@@ -146,6 +153,7 @@
 		8826281427FE239F00DB68FA /* DailyDataWatchApp WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				886D04312824844B0037F419 /* DailyDataWatchApp WatchKit Extension.entitlements */,
 				8826281527FE239F00DB68FA /* DailyDataApp.swift */,
 				8826281727FE239F00DB68FA /* ContentView.swift */,
 				881CC1D827FF59F600448471 /* TestView.swift */,
@@ -206,11 +214,10 @@
 				8826280427FDEACB00DB68FA /* README.md */,
 				883ED55727FA04A60015BB3A /* DailyDataApp.swift */,
 				88C9E6442805C9160062A519 /* MainView.swift */,
-				88C9E6462805C98F0062A519 /* InsertView.swift */,
-				88C9E6482805C9A60062A519 /* ShowingView.swift */,
-				88C9E64A2805C9AE0062A519 /* SettingsView.swift */,
-				883ED57327FA1B5F0015BB3A /* Helpers.swift */,
-				8881D1BB2804DBDC00E9CEDA /* HelperStruct.swift */,
+				8848244328107E3800D1A4FC /* Tab 1 */,
+				8848244428107E4100D1A4FC /* Tab 2 */,
+				889B0254280CCFD70066CA95 /* Settings_Tab */,
+				8848244228107E2300D1A4FC /* Helpers */,
 				883ED56927FA09E90015BB3A /* CoreDataFiles */,
 				883ED55B27FA04A70015BB3A /* Assets.xcassets */,
 				883ED55D27FA04A70015BB3A /* Preview Content */,
@@ -235,6 +242,40 @@
 				88C9E64F2805F6090062A519 /* SeedData.swift */,
 			);
 			path = CoreDataFiles;
+			sourceTree = "<group>";
+		};
+		8848244228107E2300D1A4FC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				883ED57327FA1B5F0015BB3A /* Helpers.swift */,
+				8881D1BB2804DBDC00E9CEDA /* HelperStruct.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8848244328107E3800D1A4FC /* Tab 1 */ = {
+			isa = PBXGroup;
+			children = (
+				88C9E6462805C98F0062A519 /* InsertView.swift */,
+			);
+			path = "Tab 1";
+			sourceTree = "<group>";
+		};
+		8848244428107E4100D1A4FC /* Tab 2 */ = {
+			isa = PBXGroup;
+			children = (
+				88C9E6482805C9A60062A519 /* ShowingView.swift */,
+			);
+			path = "Tab 2";
+			sourceTree = "<group>";
+		};
+		889B0254280CCFD70066CA95 /* Settings_Tab */ = {
+			isa = PBXGroup;
+			children = (
+				88C9E64A2805C9AE0062A519 /* SettingsView.swift */,
+				889B0252280CCB9E0066CA95 /* SettingsDarkMode.swift */,
+			);
+			path = Settings_Tab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,6 +430,7 @@
 				883ED57427FA1B5F0015BB3A /* Helpers.swift in Sources */,
 				883ED56E27FA0A090015BB3A /* Persistance.swift in Sources */,
 				883ED55827FA04A60015BB3A /* DailyDataApp.swift in Sources */,
+				886D0434282485F90037F419 /* TestView.swift in Sources */,
 				883ED57027FA0BBC0015BB3A /* Flightdata+Extensions.swift in Sources */,
 				88C9E64E2805D34E0062A519 /* OldCode.swift in Sources */,
 				8881D1BC2804DBDC00E9CEDA /* HelperStruct.swift in Sources */,
@@ -396,7 +438,9 @@
 				88C9E6502805F6090062A519 /* SeedData.swift in Sources */,
 				88C9E64B2805C9AE0062A519 /* SettingsView.swift in Sources */,
 				883ED56C27FA09FA0015BB3A /* CoreDataModel.xcdatamodeld in Sources */,
+				886D0433282485F50037F419 /* ContentView.swift in Sources */,
 				88C9E6472805C98F0062A519 /* InsertView.swift in Sources */,
+				889B0253280CCB9E0066CA95 /* SettingsDarkMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "DailyDataWatchApp WatchKit Extension/DailyDataWatchApp WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DailyDataWatchApp WatchKit Extension/Preview Content\"";
@@ -451,6 +496,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "DailyDataWatchApp WatchKit Extension/DailyDataWatchApp WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DailyDataWatchApp WatchKit Extension/Preview Content\"";
@@ -484,6 +530,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DailyDataWatchApp/DailyDataWatchApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XYVD428QLW;
@@ -510,6 +557,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DailyDataWatchApp/DailyDataWatchApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XYVD428QLW;

@@ -1,6 +1,21 @@
 {
   "assets" : [
     {
+      "filename" : "aircraftiwatch36 copy.imageset"
+    },
+    {
+      "filename" : "aircraftiwatch36.imageset"
+    },
+    {
+      "filename" : "aircraftiwatch44 copy.imageset"
+    },
+    {
+      "filename" : "aircraftiwatch84 copy 2.imageset"
+    },
+    {
+      "filename" : "aircraftiwatch84 copy.imageset"
+    },
+    {
       "filename" : "Circular.imageset",
       "idiom" : "watch",
       "role" : "circular"

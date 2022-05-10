@@ -1,16 +1,8 @@
-//
-//  ComplicationController.swift
-//  DailyDataWatchApp WatchKit Extension
-//
-//  Created by Fede Duarte on 6/4/22.
-//
-
 import ClockKit
-
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
-    // MARK: - Complication Configuration
+// MARK: - Complication Configuration
 
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
         let descriptors = [

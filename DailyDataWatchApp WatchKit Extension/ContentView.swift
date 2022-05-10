@@ -4,9 +4,14 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @FetchRequest(fetchRequest: Flightdata.getFlightdata()) var flightdata: FetchedResults<Flightdata>
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(fetchRequest: Flightdata.getFlightdata())
+    private var flightdata: FetchedResults<Flightdata>
+    //@Environment(\.managedObjectContext) var moc
+    //@ObservedObject var flightdata: Flightdata
     var body: some View {
         ScrollView {
+            Text("Daily data")
             ForEach(flightdata) { fl in
                 // MARK: - Destination
                 HStack {
@@ -56,11 +61,19 @@ struct ContentView: View {
                 } // VS
             } // FE
         } // SW
+        .environment(\.managedObjectContext, viewContext)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
+    static var viewContext = PersistentContainer.persistentContainer.viewContext
     static var previews: some View {
-        ContentView()
+        let e = Flightdata(context: viewContext)
+        e.destination1 = "BRU"
+        e.destination2 = "MAH"
+        e.registration = "LVP"
+        return ContentView()
+            .environment(\.managedObjectContext, PersistentContainer.persistentContainer.viewContext)
+            //.previewDevice(PreviewDevice(rawValue: "Apple Watch Series 5 - 44mm"))
     }
 }
