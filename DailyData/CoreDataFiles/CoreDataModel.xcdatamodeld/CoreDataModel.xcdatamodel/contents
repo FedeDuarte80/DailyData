@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="Flightdata" representedClassName="Flightdata" syncable="YES" codeGenerationType="class">
+    <entity name="Flightdata" representedClassName="Flightdata" syncable="YES">
         <attribute name="arrival1" optional="YES" attributeType="String"/>
         <attribute name="arrival2" optional="YES" attributeType="String"/>
         <attribute name="arrival3" optional="YES" attributeType="String"/>

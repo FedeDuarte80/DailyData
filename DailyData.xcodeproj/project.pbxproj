@@ -40,6 +40,12 @@
 		88C9E64E2805D34E0062A519 /* OldCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9E64D2805D34E0062A519 /* OldCode.swift */; };
 		88C9E6502805F6090062A519 /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9E64F2805F6090062A519 /* SeedData.swift */; };
 		88C9E6512805FB930062A519 /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9E64F2805F6090062A519 /* SeedData.swift */; };
+		88EDDE04282AD18900C61206 /* Flightdata+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EDDE02282AD18900C61206 /* Flightdata+CoreDataClass.swift */; };
+		88EDDE05282AD18900C61206 /* Flightdata+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EDDE02282AD18900C61206 /* Flightdata+CoreDataClass.swift */; };
+		88EDDE06282AD18900C61206 /* Flightdata+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EDDE03282AD18900C61206 /* Flightdata+CoreDataProperties.swift */; };
+		88EDDE07282AD18900C61206 /* Flightdata+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EDDE03282AD18900C61206 /* Flightdata+CoreDataProperties.swift */; };
+		88EDDE09282AD2E000C61206 /* TestDevelopers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EDDE08282AD2E000C61206 /* TestDevelopers.swift */; };
+		88EDDE0A282AD2E000C61206 /* TestDevelopers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EDDE08282AD2E000C61206 /* TestDevelopers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +126,9 @@
 		88C9E64A2805C9AE0062A519 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		88C9E64D2805D34E0062A519 /* OldCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldCode.swift; sourceTree = "<group>"; };
 		88C9E64F2805F6090062A519 /* SeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedData.swift; sourceTree = "<group>"; };
+		88EDDE02282AD18900C61206 /* Flightdata+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flightdata+CoreDataClass.swift"; sourceTree = "<group>"; };
+		88EDDE03282AD18900C61206 /* Flightdata+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flightdata+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		88EDDE08282AD2E000C61206 /* TestDevelopers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDevelopers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,7 +248,10 @@
 				883ED56A27FA09FA0015BB3A /* CoreDataModel.xcdatamodeld */,
 				883ED56D27FA0A090015BB3A /* Persistance.swift */,
 				883ED56F27FA0BBC0015BB3A /* Flightdata+Extensions.swift */,
+				88EDDE02282AD18900C61206 /* Flightdata+CoreDataClass.swift */,
+				88EDDE03282AD18900C61206 /* Flightdata+CoreDataProperties.swift */,
 				88C9E64F2805F6090062A519 /* SeedData.swift */,
+				88EDDE08282AD2E000C61206 /* TestDevelopers.swift */,
 			);
 			path = CoreDataFiles;
 			sourceTree = "<group>";
@@ -410,14 +422,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8826283827FE4E7A00DB68FA /* Persistance.swift in Sources */,
+				88EDDE07282AD18900C61206 /* Flightdata+CoreDataProperties.swift in Sources */,
 				8826283927FE4E7D00DB68FA /* Flightdata+Extensions.swift in Sources */,
 				88C9E6512805FB930062A519 /* SeedData.swift in Sources */,
 				8826281A27FE239F00DB68FA /* NotificationController.swift in Sources */,
 				8826281827FE239F00DB68FA /* ContentView.swift in Sources */,
 				8826283727FE4E7700DB68FA /* CoreDataModel.xcdatamodeld in Sources */,
 				8826281E27FE239F00DB68FA /* ComplicationController.swift in Sources */,
+				88EDDE05282AD18900C61206 /* Flightdata+CoreDataClass.swift in Sources */,
 				881CC1D927FF59F600448471 /* TestView.swift in Sources */,
 				8826281627FE239F00DB68FA /* DailyDataApp.swift in Sources */,
+				88EDDE0A282AD2E000C61206 /* TestDevelopers.swift in Sources */,
 				8826281C27FE239F00DB68FA /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,14 +441,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88EDDE06282AD18900C61206 /* Flightdata+CoreDataProperties.swift in Sources */,
 				88C9E6452805C9160062A519 /* MainView.swift in Sources */,
 				883ED57427FA1B5F0015BB3A /* Helpers.swift in Sources */,
 				883ED56E27FA0A090015BB3A /* Persistance.swift in Sources */,
 				883ED55827FA04A60015BB3A /* DailyDataApp.swift in Sources */,
 				886D0434282485F90037F419 /* TestView.swift in Sources */,
+				88EDDE04282AD18900C61206 /* Flightdata+CoreDataClass.swift in Sources */,
 				883ED57027FA0BBC0015BB3A /* Flightdata+Extensions.swift in Sources */,
 				88C9E64E2805D34E0062A519 /* OldCode.swift in Sources */,
 				8881D1BC2804DBDC00E9CEDA /* HelperStruct.swift in Sources */,
+				88EDDE09282AD2E000C61206 /* TestDevelopers.swift in Sources */,
 				88C9E6492805C9A60062A519 /* ShowingView.swift in Sources */,
 				88C9E6502805F6090062A519 /* SeedData.swift in Sources */,
 				88C9E64B2805C9AE0062A519 /* SettingsView.swift in Sources */,

@@ -11,7 +11,7 @@ struct ContentView: View {
     //@ObservedObject var flightdata: Flightdata
     var body: some View {
         ScrollView {
-            Text("Daily data")
+            Text("Daily May 15th")
             ForEach(flightdata) { fl in
                 // MARK: - Destination
                 HStack {
@@ -72,8 +72,9 @@ struct ContentView_Previews: PreviewProvider {
         e.destination1 = "BRU"
         e.destination2 = "MAH"
         e.registration = "LVP"
+
         return ContentView()
             .environment(\.managedObjectContext, PersistentContainer.persistentContainer.viewContext)
-            //.previewDevice(PreviewDevice(rawValue: "Apple Watch Series 5 - 44mm"))
+        //    .previewDevice(PreviewDevice(rawValue: "Apple Watch Series 5 - 44mm"))
     }
 }

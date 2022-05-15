@@ -1,4 +1,7 @@
 import CoreData
+import ClockKit
+
+
 
 public class PersistentContainer {
     
@@ -14,10 +17,8 @@ public class PersistentContainer {
 // MARK: - Core Data stack
     public static var persistentContainer: NSPersistentCloudKitContainer = {
             
-        let container = NSPersistentCloudKitContainer(name: "CoreDataModel") // CDModel
+        let container = NSPersistentCloudKitContainer(name: "CoreDataModel")
 
-        
-        
         guard let description = container.persistentStoreDescriptions.first else {
             fatalError("No description found")
         }
@@ -25,9 +26,6 @@ public class PersistentContainer {
         // https://www.youtube.com/watch?v=TsfOYHbf4Ew
         
         description.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: "iCloud.fededuarte.dailydata")
- //      description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
- //       description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
-        
         
             container.loadPersistentStores(completionHandler: { (storeDescription, error) in
                     if let error = error as NSError? {
@@ -52,20 +50,18 @@ public class PersistentContainer {
                     }
             }
     }
-    @objc
-    func processUpdate(notificacion: NSNotification) {
-        operationQueue.addOperation {
-            
-        }
-    }
-    
-    lazy var operationQueue: OperationQueue = {
-        var queue = OperationQueue()
-        queue.maxConcurrentOperationCount = 1
-        return queue
-    }()
-    
-    
+//    @objc
+//    func processUpdate(notificacion: NSNotification) {
+//        operationQueue.addOperation {
+//
+//        }
+//    }
+//
+//    lazy var operationQueue: OperationQueue = {
+//        var queue = OperationQueue()
+//        queue.maxConcurrentOperationCount = 1
+//        return queue
+//    }()
     
     static func deleteBatch() {
         print("deleteBatch Called")
