@@ -7,74 +7,132 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(fetchRequest: Flightdata.getFlightdata())
     private var flightdata: FetchedResults<Flightdata>
-    //@Environment(\.managedObjectContext) var moc
-    //@ObservedObject var flightdata: Flightdata
     var body: some View {
         ScrollView {
-            Text("Daily May 15th")
             ForEach(flightdata) { fl in
-                // MARK: - Destination
+// MARK: - Destination
                 HStack {
                     Text(fl.destination1Name)
-                    Text("-")
+                    Text("-").opacity(fl.destination2Name.isEmpty ? 0 : 1)
                     Text(fl.destination2Name)
                     Spacer()
-                    Text("EC-")
+                    Text("EC - ")
                     Text(fl.registrationName)
                 } // HS
                 Divider()
-                // MARK: - Fligths
-                HStack {
-                    Text(fl.flight1Name)
-                    Text(fl.departure1Name)
-                    Text(fl.arrival1Name)
-                    Text(fl.pax1Name)
-                } // HS
-                HStack {
-                    Text(fl.flight2Name)
-                    Text(fl.departure2Name)
-                    Text(fl.arrival2Name)
-                    Text(fl.pax2Name)
-                } // HS
-                HStack {
-                    Text(fl.flight3Name)
-                    Text(fl.departure3Name)
-                    Text(fl.arrival3Name)
-                    Text(fl.pax3Name)
-                } // HS
-                HStack {
-                    Text(fl.flight4Name)
-                    Text(fl.departure4Name)
-                    Text(fl.arrival4Name)
-                    Text(fl.pax4Name)
-                } // HS
-                
-                // MARK: - Crew
+// MARK: - Fligths
+                VStack {
+                    if fl.destination2Name.isEmpty {
+                        HStack {
+                            Text(fl.flight1Name)
+                            Spacer()
+                            Text(fl.departure1Name)
+                            Spacer()
+                            Text(fl.arrival1Name)
+                            Spacer()
+                            Text(fl.pax1Name)
+                        }
+                        HStack {
+                            Text(fl.flight2Name)
+                            Spacer()
+                            Text(fl.departure2Name)
+                            Spacer()
+                            Text(fl.arrival2Name)
+                            Spacer()
+                            Text(fl.pax2Name)
+                        }
+                    } else {
+                        HStack {
+                            Text(fl.flight1Name)
+                            Spacer()
+                            Text(fl.departure1Name)
+                            Spacer()
+                            Text(fl.arrival1Name)
+                            Spacer()
+                            Text(fl.pax1Name)
+                        }
+                        HStack {
+                            Text(fl.flight2Name)
+                            Spacer()
+                            Text(fl.departure2Name)
+                            Spacer()
+                            Text(fl.arrival2Name)
+                            Spacer()
+                            Text(fl.pax2Name)
+                        }
+                        HStack {
+                            Text(fl.flight3Name)
+                            Spacer()
+                            Text(fl.departure3Name)
+                            Spacer()
+                            Text(fl.arrival3Name)
+                            Spacer()
+                            Text(fl.pax3Name)
+                        }
+                        HStack {
+                            Text(fl.flight4Name)
+                            Spacer()
+                            Text(fl.departure4Name)
+                            Spacer()
+                            Text(fl.arrival4Name)
+                            Spacer()
+                            Text(fl.pax4Name)
+                        }
+                    } // else
+                } // VS
+// MARK: - Crew
                 Divider()
-                VStack { // Needed due max 10 items
-                    Text(fl.flightcrew1Name)
-                    Text(fl.flightcrew2Name)
-                    Text(fl.cabincrew2Name)
-                    Text(fl.cabincrew3Name)
-                    Text(fl.cabincrew4Name)
-                    Text(fl.cabincrew5Name)
+                HStack {
+                    VStack(alignment: .leading) { 
+                        Text(fl.flightcrew1Name)
+                        Text(fl.flightcrew2Name)
+                        Text(fl.cabincrew2Name)
+                        Text(fl.cabincrew3Name)
+                        Text(fl.cabincrew4Name)
+                        Text(fl.cabincrew5Name)
+                    }
+                    Spacer()
                 } // VS
             } // FE
         } // SW
-        .environment(\.managedObjectContext, viewContext)
+        .padding(.horizontal, 2)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var viewContext = PersistentContainer.persistentContainer.viewContext
     static var previews: some View {
-        let e = Flightdata(context: viewContext)
-        e.destination1 = "BRU"
-        e.destination2 = "MAH"
-        e.registration = "LVP"
-
         return ContentView()
-            .environment(\.managedObjectContext, PersistentContainer.persistentContainer.viewContext)
-        //    .previewDevice(PreviewDevice(rawValue: "Apple Watch Series 5 - 44mm"))
     }
 }
+
+/*
+ HStack {
+     VStack {
+         Text(fl.flight1Name)
+         Text(fl.flight2Name)
+         Text(fl.flight3Name)
+         Text(fl.flight4Name)
+     }
+     Spacer()
+     VStack {
+         Text(fl.departure1Name)
+         Text(fl.departure2Name)
+         Text(fl.departure3Name)
+         Text(fl.departure4Name)
+     }
+     Spacer()
+     VStack {
+         Text(fl.arrival1Name)
+         Text(fl.arrival2Name)
+         Text(fl.arrival3Name)
+         Text(fl.arrival4Name)
+     }
+     Spacer()
+     VStack {
+         Text(fl.pax1Name)
+         Text(fl.pax2Name)
+         Text(fl.pax3Name)
+         Text(fl.pax4Name)
+     }
+ } // HS
+ */

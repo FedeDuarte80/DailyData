@@ -33,6 +33,7 @@
 		886D0434282485F90037F419 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881CC1D827FF59F600448471 /* TestView.swift */; };
 		8881D1BC2804DBDC00E9CEDA /* HelperStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8881D1BB2804DBDC00E9CEDA /* HelperStruct.swift */; };
 		889B0253280CCB9E0066CA95 /* SettingsDarkMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B0252280CCB9E0066CA95 /* SettingsDarkMode.swift */; };
+		88C205092831B88C0096A675 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C205082831B88C0096A675 /* CloudKit.framework */; };
 		88C9E6452805C9160062A519 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9E6442805C9160062A519 /* MainView.swift */; };
 		88C9E6472805C98F0062A519 /* InsertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9E6462805C98F0062A519 /* InsertView.swift */; };
 		88C9E6492805C9A60062A519 /* ShowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9E6482805C9A60062A519 /* ShowingView.swift */; };
@@ -120,6 +121,7 @@
 		886D04312824844B0037F419 /* DailyDataWatchApp WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DailyDataWatchApp WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		8881D1BB2804DBDC00E9CEDA /* HelperStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperStruct.swift; sourceTree = "<group>"; };
 		889B0252280CCB9E0066CA95 /* SettingsDarkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDarkMode.swift; sourceTree = "<group>"; };
+		88C205082831B88C0096A675 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.5.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		88C9E6442805C9160062A519 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		88C9E6462805C98F0062A519 /* InsertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertView.swift; sourceTree = "<group>"; };
 		88C9E6482805C9A60062A519 /* ShowingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingView.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88C205092831B88C0096A675 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +191,7 @@
 		8826283327FE3C9A00DB68FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				88C205082831B88C0096A675 /* CloudKit.framework */,
 				8826283427FE3C9A00DB68FA /* CloudKit.framework */,
 			);
 			name = Frameworks;
@@ -491,7 +495,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DailyDataWatchApp WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "DailyDataWatchApp WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = DailyDataWatchApp_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -523,7 +527,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DailyDataWatchApp WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "DailyDataWatchApp WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = DailyDataWatchApp_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
