@@ -5,11 +5,13 @@
       "scale" : "2x"
     },
     {
+      "filename" : "aircraftiwatch182.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : "<=145"
     },
     {
+      "filename" : "aircraftiwatch224.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">183"

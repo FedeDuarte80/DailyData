@@ -12,12 +12,16 @@ struct ContentView: View {
             ForEach(flightdata) { fl in
 // MARK: - Destination
                 HStack {
-                    Text(fl.destination1Name)
-                    Text("-").opacity(fl.destination2Name.isEmpty ? 0 : 1)
-                    Text(fl.destination2Name)
+                    HStack {
+                        Text(fl.destination1Name)
+                        Text("-").opacity(fl.destination2Name.isEmpty ? 0 : 1)
+                        Text(fl.destination2Name)
+                    } // HS
                     Spacer()
-                    Text("EC - ")
-                    Text(fl.registrationName)
+                    HStack {
+                        Text("EC - ").opacity(fl.registrationName.isEmpty ? 0 : 1)
+                        Text(fl.registrationName)
+                    } // HS
                 } // HS
                 Divider()
 // MARK: - Fligths
@@ -90,8 +94,16 @@ struct ContentView: View {
                         Text(fl.cabincrew3Name)
                         Text(fl.cabincrew4Name)
                         Text(fl.cabincrew5Name)
-                    }
+                    }.lineLimit(1)
                     Spacer()
+                    VStack(alignment: .trailing) {
+                        Text(fl.flightcrew1Number)
+                        Text(fl.flightcrew2Number)
+                        Text(fl.crew2Number)
+                        Text(fl.crew3Number)
+                        Text(fl.crew4Number)
+                        Text(fl.crew5Number)
+                    }
                 } // VS
             } // FE
         } // SW
@@ -102,6 +114,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         return ContentView()
+           //98 .previewDevice(PreviewDevice(rawValue: "Apple Watch Series 5 - 44mm"))
     }
 }
 

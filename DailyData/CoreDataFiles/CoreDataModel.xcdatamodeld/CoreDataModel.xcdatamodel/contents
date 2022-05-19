@@ -10,6 +10,10 @@
         <attribute name="cabincrew4" optional="YES" attributeType="String"/>
         <attribute name="cabincrew5" optional="YES" attributeType="String"/>
         <attribute name="captain" optional="YES" attributeType="String"/>
+        <attribute name="crewNumber2" optional="YES" attributeType="String"/>
+        <attribute name="crewNumber3" optional="YES" attributeType="String"/>
+        <attribute name="crewNumber4" optional="YES" attributeType="String"/>
+        <attribute name="crewNumber5" optional="YES" attributeType="String"/>
         <attribute name="departure1" optional="YES" attributeType="String"/>
         <attribute name="departure2" optional="YES" attributeType="String"/>
         <attribute name="departure3" optional="YES" attributeType="String"/>
@@ -22,6 +26,8 @@
         <attribute name="flight4" optional="YES" attributeType="String"/>
         <attribute name="flightcrew1" optional="YES" attributeType="String"/>
         <attribute name="flightcrew2" optional="YES" attributeType="String"/>
+        <attribute name="flightNumber1" optional="YES" attributeType="String"/>
+        <attribute name="flightNumber2" optional="YES" attributeType="String"/>
         <attribute name="pax1" optional="YES" attributeType="String"/>
         <attribute name="pax2" optional="YES" attributeType="String"/>
         <attribute name="pax3" optional="YES" attributeType="String"/>
@@ -29,6 +35,6 @@
         <attribute name="registration" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Flightdata" positionX="-54" positionY="-9" width="128" height="419"/>
+        <element name="Flightdata" positionX="-54" positionY="-9" width="128" height="509"/>
     </elements>
 </model>

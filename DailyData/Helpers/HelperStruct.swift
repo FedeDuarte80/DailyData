@@ -6,7 +6,7 @@ struct HelperStruct: View {
             DestinationView(dest1: "MAD", dest2: "DUB")
             RegistrationView(reg1: "JSY")
             FlightView(Label: "Flight Nº", a: "1234", b: "1234", c: "1234", d: "123")
-            CrewView(function: "2 - ", name: "Number 2", opa: 1)
+            CrewView(function: "2 - ", name: "Number 2", staff: "10999", opa: 1)
             LabelView(label: "Destination")
         }
     }
@@ -59,6 +59,7 @@ struct FlightView: View {
 struct CrewView: View {
     let function: String
     let name: String
+    let staff: String
     let opa: Double
     var body: some View {
         HStack {
@@ -66,6 +67,9 @@ struct CrewView: View {
                 .modifier(Labels())
                 .opacity(opa)
             Text(name)
+            Spacer()
+            Text(staff)
+            
         }
     }
 }

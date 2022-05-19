@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		881CC1D927FF59F600448471 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881CC1D827FF59F600448471 /* TestView.swift */; };
 		8826280B27FE239F00DB68FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8826280A27FE239F00DB68FA /* Assets.xcassets */; };
 		8826281127FE239F00DB68FA /* DailyDataWatchApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8826281027FE239F00DB68FA /* DailyDataWatchApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8826281627FE239F00DB68FA /* DailyDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8826281527FE239F00DB68FA /* DailyDataApp.swift */; };
@@ -30,8 +29,8 @@
 		883ED57027FA0BBC0015BB3A /* Flightdata+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED56F27FA0BBC0015BB3A /* Flightdata+Extensions.swift */; };
 		883ED57427FA1B5F0015BB3A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED57327FA1B5F0015BB3A /* Helpers.swift */; };
 		886D0433282485F50037F419 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8826281727FE239F00DB68FA /* ContentView.swift */; };
-		886D0434282485F90037F419 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881CC1D827FF59F600448471 /* TestView.swift */; };
 		8881D1BC2804DBDC00E9CEDA /* HelperStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8881D1BB2804DBDC00E9CEDA /* HelperStruct.swift */; };
+		88914E792836F73D002CC064 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88914E782836F73D002CC064 /* MainView.swift */; };
 		889B0253280CCB9E0066CA95 /* SettingsDarkMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B0252280CCB9E0066CA95 /* SettingsDarkMode.swift */; };
 		88C205092831B88C0096A675 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C205082831B88C0096A675 /* CloudKit.framework */; };
 		88C9E6452805C9160062A519 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9E6442805C9160062A519 /* MainView.swift */; };
@@ -92,7 +91,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		881CC1D827FF59F600448471 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		8826280427FDEACB00DB68FA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8826280527FE0F9800DB68FA /* DailyData.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailyData.entitlements; sourceTree = "<group>"; };
 		8826280827FE239E00DB68FA /* DailyDataWatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDataWatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +118,7 @@
 		886D04302824843D0037F419 /* DailyDataWatchApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailyDataWatchApp.entitlements; sourceTree = "<group>"; };
 		886D04312824844B0037F419 /* DailyDataWatchApp WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DailyDataWatchApp WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		8881D1BB2804DBDC00E9CEDA /* HelperStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperStruct.swift; sourceTree = "<group>"; };
+		88914E782836F73D002CC064 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		889B0252280CCB9E0066CA95 /* SettingsDarkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDarkMode.swift; sourceTree = "<group>"; };
 		88C205082831B88C0096A675 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.5.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		88C9E6442805C9160062A519 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -168,7 +167,7 @@
 				886D04312824844B0037F419 /* DailyDataWatchApp WatchKit Extension.entitlements */,
 				8826281527FE239F00DB68FA /* DailyDataApp.swift */,
 				8826281727FE239F00DB68FA /* ContentView.swift */,
-				881CC1D827FF59F600448471 /* TestView.swift */,
+				88914E782836F73D002CC064 /* MainView.swift */,
 				8826281927FE239F00DB68FA /* NotificationController.swift */,
 				8826281B27FE239F00DB68FA /* NotificationView.swift */,
 				8826281D27FE239F00DB68FA /* ComplicationController.swift */,
@@ -426,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8826283827FE4E7A00DB68FA /* Persistance.swift in Sources */,
+				88914E792836F73D002CC064 /* MainView.swift in Sources */,
 				88EDDE07282AD18900C61206 /* Flightdata+CoreDataProperties.swift in Sources */,
 				8826283927FE4E7D00DB68FA /* Flightdata+Extensions.swift in Sources */,
 				88C9E6512805FB930062A519 /* SeedData.swift in Sources */,
@@ -434,7 +434,6 @@
 				8826283727FE4E7700DB68FA /* CoreDataModel.xcdatamodeld in Sources */,
 				8826281E27FE239F00DB68FA /* ComplicationController.swift in Sources */,
 				88EDDE05282AD18900C61206 /* Flightdata+CoreDataClass.swift in Sources */,
-				881CC1D927FF59F600448471 /* TestView.swift in Sources */,
 				8826281627FE239F00DB68FA /* DailyDataApp.swift in Sources */,
 				88EDDE0A282AD2E000C61206 /* TestDevelopers.swift in Sources */,
 				8826281C27FE239F00DB68FA /* NotificationView.swift in Sources */,
@@ -450,7 +449,6 @@
 				883ED57427FA1B5F0015BB3A /* Helpers.swift in Sources */,
 				883ED56E27FA0A090015BB3A /* Persistance.swift in Sources */,
 				883ED55827FA04A60015BB3A /* DailyDataApp.swift in Sources */,
-				886D0434282485F90037F419 /* TestView.swift in Sources */,
 				88EDDE04282AD18900C61206 /* Flightdata+CoreDataClass.swift in Sources */,
 				883ED57027FA0BBC0015BB3A /* Flightdata+Extensions.swift in Sources */,
 				88C9E64E2805D34E0062A519 /* OldCode.swift in Sources */,

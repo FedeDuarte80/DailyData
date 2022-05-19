@@ -3,7 +3,6 @@
 import SwiftUI
 
 struct InsertView: View {
-//    @Environment(\.managedObjectContext) var moc
     @State var lastSubmit: String = "None"
     @FocusState var focus: OrderField?
     enum OrderField: Int, Hashable, CaseIterable {
@@ -27,11 +26,17 @@ struct InsertView: View {
         case arrival4
         case pax4
         case flightcrew1
+        case flightNumber1
         case flightcrew2
+        case flightNumber2
         case cabincrew2
+        case crewNumber2
         case cabincrew3
+        case crewNumber3
         case cabincrew4
+        case crewNumber4
         case cabincrew5
+        case crewNumber5
         
         func next() -> OrderField? {
             let all = Self.allCases
@@ -80,6 +85,13 @@ struct InsertView: View {
     @State private var cabincrew3 = ""
     @State private var cabincrew4 = ""
     @State private var cabincrew5 = ""
+    
+    @State private var flightNumber1 = ""
+    @State private var flightNumber2 = ""
+    @State private var crewNumber2 = ""
+    @State private var crewNumber3 = ""
+    @State private var crewNumber4 = ""
+    @State private var crewNumber5 = ""
     
 // MARK: - BODY
     var body: some View {
@@ -253,6 +265,11 @@ struct InsertView: View {
                             .onSubmit { lastSubmit = flightcrew1
                                 if let focus = focus { self.focus = focus.next() } }
                             .focused($focus, equals: .flightcrew1)
+                        TextField("", text: $flightNumber1).modifier(CrewNumbers())
+                            .onSubmit { lastSubmit = flightNumber1
+                                if let focus = focus { self.focus = focus.next() } }
+                            .focused($focus, equals: .flightNumber1)
+                            .limitInputLength(value: $flightNumber1, length: 5)
                     }
                     HStack {
                         LabelView(label: "F - ")
@@ -260,6 +277,11 @@ struct InsertView: View {
                             .onSubmit { lastSubmit = flightcrew2
                                 if let focus = focus { self.focus = focus.next() } }
                             .focused($focus, equals: .flightcrew2)
+                        TextField("", text: $flightNumber2).modifier(CrewNumbers())
+                            .onSubmit { lastSubmit = flightNumber2
+                                if let focus = focus { self.focus = focus.next() } }
+                            .focused($focus, equals: .flightNumber2)
+                            .limitInputLength(value: $flightNumber2, length: 5)
                     }
                     HStack {
                         LabelView(label: "2 - ")
@@ -267,6 +289,11 @@ struct InsertView: View {
                             .onSubmit { lastSubmit = cabincrew2
                                 if let focus = focus { self.focus = focus.next() } }
                             .focused($focus, equals: .cabincrew2)
+                        TextField("", text: $crewNumber2).modifier(CrewNumbers())
+                            .onSubmit { lastSubmit = crewNumber2
+                                if let focus = focus { self.focus = focus.next() } }
+                            .focused($focus, equals: .crewNumber2)
+                            .limitInputLength(value: $crewNumber2, length: 5)
                     }
                     HStack {
                         LabelView(label: "3 - ")
@@ -274,6 +301,11 @@ struct InsertView: View {
                             .onSubmit { lastSubmit = cabincrew3
                                 if let focus = focus { self.focus = focus.next() } }
                             .focused($focus, equals: .cabincrew3)
+                        TextField("", text: $crewNumber3).modifier(CrewNumbers())
+                            .onSubmit { lastSubmit = crewNumber3
+                                if let focus = focus { self.focus = focus.next() } }
+                            .focused($focus, equals: .crewNumber3)
+                            .limitInputLength(value: $crewNumber3, length: 5)
                     }
                     HStack {
                         LabelView(label: "4 - ")
@@ -281,6 +313,11 @@ struct InsertView: View {
                             .onSubmit { lastSubmit = cabincrew4
                                 if let focus = focus { self.focus = focus.next() } }
                             .focused($focus, equals: .cabincrew4)
+                        TextField("", text: $crewNumber4).modifier(CrewNumbersDone())
+                            .onSubmit { lastSubmit = crewNumber4
+                                if let focus = focus { self.focus = focus.next() } }
+                            .focused($focus, equals: .crewNumber4)
+                            .limitInputLength(value: $crewNumber4, length: 5)
                     }
                     HStack {
                         LabelView(label: "B - ")
@@ -288,6 +325,11 @@ struct InsertView: View {
                             .onSubmit { lastSubmit = cabincrew5
                                 if let focus = focus { self.focus = focus.next() } }
                             .focused($focus, equals: .cabincrew5)
+                        TextField("", text: $crewNumber5).modifier(CrewNumbersDone())
+                            .onSubmit { lastSubmit = crewNumber5
+                                if let focus = focus { self.focus = focus.next() } }
+                            .focused($focus, equals: .crewNumber5)
+                            .limitInputLength(value: $crewNumber5, length: 5)
                     }
                 } // VS
                 Spacer()
@@ -323,7 +365,9 @@ struct InsertView: View {
                 fli2: flight2, dep2: departure2, arr2: arrival2, pa2: pax2,
                 fli3: flight3, dep3: departure3, arr3: arrival3, pa3: pax3,
                 fli4: flight4, dep4: departure4, arr4: arrival4, pa4: pax4,
-                flig1: flightcrew1, flig2: flightcrew2, cab2: cabincrew2, cab3: cabincrew3, cab4: cabincrew4, cab5: cabincrew5)
+                flig1: flightcrew1, flig2: flightcrew2, cab2: cabincrew2, cab3: cabincrew3, cab4: cabincrew4, cab5: cabincrew5,
+                num1: flightNumber1, num12: flightNumber2, num2: crewNumber2, num3: crewNumber3, num4: crewNumber4, num5: crewNumber5
+            )
             
             self.destination1 = ""
             self.destination2 = ""
@@ -350,6 +394,12 @@ struct InsertView: View {
             self.cabincrew3 = ""
             self.cabincrew4 = ""
             self.cabincrew5 = ""
+            self.flightNumber1 = ""
+            self.flightNumber2 = ""
+            self.crewNumber2 = ""
+            self.crewNumber3 = ""
+            self.crewNumber4 = ""
+            self.crewNumber5 = ""
         }) {
             Text("Send")
         }.disabled(destination1.isEmpty)

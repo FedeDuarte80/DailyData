@@ -28,10 +28,10 @@ extension Flightdata {
     public var arrival4Name: String { arrival4 ?? "" }
     
     // 5
-    public var pax1Name: String { pax1 ?? "" }
-    public var pax2Name: String { pax2 ?? "" }
-    public var pax3Name: String { pax3 ?? "" }
-    public var pax4Name: String { pax4 ?? "" }
+    public var pax1Name: String { pax1 ?? "..." }
+    public var pax2Name: String { pax2 ?? "..." }
+    public var pax3Name: String { pax3 ?? "..." }
+    public var pax4Name: String { pax4 ?? "..." }
     
     // 6
     public var flightcrew1Name: String { flightcrew1 ?? "" }
@@ -40,6 +40,14 @@ extension Flightdata {
     public var cabincrew3Name: String { cabincrew3 ?? "" }
     public var cabincrew4Name: String { cabincrew4 ?? "" }
     public var cabincrew5Name: String { cabincrew5 ?? "" }
+    
+    // 7
+    public var flightcrew1Number: String { flightNumber1 ?? "" }
+    public var flightcrew2Number: String { flightNumber2 ?? "" }
+    public var crew2Number: String { crewNumber2 ?? "" }
+    public var crew3Number: String { crewNumber3 ?? "" }
+    public var crew4Number: String { crewNumber4 ?? "" }
+    public var crew5Number: String { crewNumber5 ?? "" }
     
 }
 extension Flightdata {
@@ -50,7 +58,8 @@ extension Flightdata {
         return request
     }
     
-    class func addFlightsData(des1: String, des2: String, reg: String, fli1: String, dep1: String, arr1: String, pa1: String,  fli2: String, dep2: String, arr2: String, pa2: String,  fli3: String, dep3: String, arr3: String, pa3: String,  fli4: String, dep4: String, arr4: String, pa4: String, flig1: String, flig2: String, cab2: String, cab3: String, cab4: String, cab5: String) {
+    class func addFlightsData(des1: String, des2: String, reg: String, fli1: String, dep1: String, arr1: String, pa1: String,  fli2: String, dep2: String, arr2: String, pa2: String,  fli3: String, dep3: String, arr3: String, pa3: String,  fli4: String, dep4: String, arr4: String, pa4: String, flig1: String, flig2: String, cab2: String, cab3: String, cab4: String, cab5: String, num1: String, num12: String, num2: String, num3: String, num4: String, num5: String
+    ) {
         let newData = Flightdata(context: PersistentContainer.context)
         newData.destination1 = des1
         newData.destination2 = des2
@@ -77,6 +86,12 @@ extension Flightdata {
         newData.cabincrew3 = cab3
         newData.cabincrew4 = cab4
         newData.cabincrew5 = cab5
+        newData.flightNumber1 = num1
+        newData.flightNumber2 = num12
+        newData.crewNumber2 = num2
+        newData.crewNumber3 = num3
+        newData.crewNumber4 = num4
+        newData.crewNumber5 = num5
         PersistentContainer.saveContext()
     }
     static func loadSeedData(into context: NSManagedObjectContext) {

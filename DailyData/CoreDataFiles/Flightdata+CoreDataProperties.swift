@@ -42,6 +42,13 @@ extension Flightdata {
     @NSManaged public var pax3: String?
     @NSManaged public var pax4: String?
     @NSManaged public var registration: String?
+    
+    @NSManaged public var flightNumber1: String?
+    @NSManaged public var flightNumber2: String?
+    @NSManaged public var crewNumber2: String?
+    @NSManaged public var crewNumber3: String?
+    @NSManaged public var crewNumber4: String?
+    @NSManaged public var crewNumber5: String?
 
 }
 

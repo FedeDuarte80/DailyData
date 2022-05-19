@@ -29,6 +29,18 @@ struct CrewDetails: ViewModifier {
             .submitLabel(.next)
             .textInputAutocapitalization(.characters)
     } }
+struct CrewNumbers: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(width: 100)
+            .textFieldStyle(.roundedBorder)
+            .multilineTextAlignment(.trailing)
+            .submitLabel(.next)
+            .keyboardType(UIKeyboardType.phonePad)
+            
+    }
+}
+
 struct CrewDetailsDone: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -38,6 +50,17 @@ struct CrewDetailsDone: ViewModifier {
             .textInputAutocapitalization(.characters)
     }
 }
+struct CrewNumbersDone: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(width: 100)
+            .textFieldStyle(.roundedBorder)
+            .multilineTextAlignment(.trailing)
+            .submitLabel(.done)
+            .keyboardType(UIKeyboardType.phonePad)
+    }
+}
+
 struct Labels: ViewModifier {
     func body(content: Content) -> some View {
         content

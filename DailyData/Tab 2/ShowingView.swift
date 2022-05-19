@@ -22,18 +22,18 @@ struct ShowingView: View {
                         FlightView(Label: "Flight Nº", a: fl.flight1Name, b: fl.flight2Name, c: fl.flight3Name, d: fl.flight4Name)
                         FlightView(Label: "ETD", a: fl.departure1Name, b: fl.departure2Name, c: fl.departure3Name, d: fl.departure4Name)
                         FlightView(Label: "ETA", a: fl.arrival1Name, b: fl.arrival2Name, c: fl.arrival3Name, d: fl.arrival4Name)
-                        FlightView(Label: "PAX", a: fl.pax1Name, b: fl.pax2Name, c: fl.pax3Name, d: fl.pax4Name)
+                        FlightView(Label: "PAX", a: fl.pax1Name, b: fl.pax2Name, c: fl.pax3Name, d: fl.pax4Name).border(.yellow)
                     } // HS
                     Divider().padding(.vertical, 5)
                     Text("CREW").modifier(Labels())
                     HStack {
                         VStack(alignment: .leading, spacing: 34) {
-                            CrewView(function: "C - ", name: fl.flightcrew1Name, opa: 1)
-                            CrewView(function: "F - ", name: fl.flightcrew2Name, opa: 1)
-                            CrewView(function: "2 - ", name: fl.cabincrew2Name, opa: 1)
-                            CrewView(function: "3 - ", name: fl.cabincrew3Name, opa: 1)
-                            CrewView(function: "4 - ", name: fl.cabincrew4Name, opa: fl.cabincrew4Name.isEmpty ? 0 : 1)
-                            CrewView(function: "5 - ", name: fl.cabincrew5Name, opa: fl.cabincrew5Name.isEmpty ? 0 : 1)
+                            CrewView(function: "C - ", name: fl.flightcrew1Name, staff: fl.flightcrew1Number, opa: 1)
+                            CrewView(function: "F - ", name: fl.flightcrew2Name, staff: fl.flightcrew2Number, opa: 1)
+                            CrewView(function: "2 - ", name: fl.cabincrew2Name, staff: fl.crew2Number, opa: 1)
+                            CrewView(function: "3 - ", name: fl.cabincrew3Name, staff: fl.crew3Number, opa: 1)
+                            CrewView(function: "4 - ", name: fl.cabincrew4Name, staff: fl.crew4Number, opa: fl.cabincrew4Name.isEmpty ? 0 : 1)
+                            CrewView(function: "5 - ", name: fl.cabincrew5Name, staff: fl.crew5Number, opa: fl.cabincrew5Name.isEmpty ? 0 : 1)
                         }.padding(.vertical, 5)
                         Spacer()
                     }
@@ -96,11 +96,17 @@ struct ShowingView_Previews: PreviewProvider {
         s.pax3 = "123"
         s.pax4 = "123"
         s.flightcrew1 = "QWERTY"
+        s.flightNumber1 = "12345"
         s.flightcrew2 = "QWERTY"
+        s.flightNumber2 = "12345"
         s.cabincrew2 = "QWERTY"
+        s.crewNumber2 = "13245"
         s.cabincrew3 = "QWERTY"
+        s.crewNumber3 = "13245"
         s.cabincrew4 = "QWERTY"
+        s.crewNumber4 = "13245"
         s.cabincrew5 = "QWERTY"
+        s.crewNumber5 = "13245"
         return ShowingView() .environment(\.managedObjectContext, PersistentContainer.persistentContainer.viewContext)
             .preferredColorScheme(.dark)
         
