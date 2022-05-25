@@ -4,7 +4,7 @@ struct HelperStruct: View {
     var body: some View {
         VStack {
             DestinationView(dest1: "MAD", dest2: "DUB")
-            RegistrationView(reg1: "JSY")
+            RegistrationView(reg1: "JSY - MAN")
             FlightView(Label: "Flight Nº", a: "1234", b: "1234", c: "1234", d: "123")
             CrewView(function: "2 - ", name: "Number 2", staff: "10999", opa: 1)
             LabelView(label: "Destination")

@@ -28,10 +28,10 @@ extension Flightdata {
     public var arrival4Name: String { arrival4 ?? "" }
     
     // 5
-    public var pax1Name: String { pax1 ?? "..." }
-    public var pax2Name: String { pax2 ?? "..." }
-    public var pax3Name: String { pax3 ?? "..." }
-    public var pax4Name: String { pax4 ?? "..." }
+    public var pax1Name: String { pax1 ?? "000" }
+    public var pax2Name: String { pax2 ?? "000" }
+    public var pax3Name: String { pax3 ?? "000" }
+    public var pax4Name: String { pax4 ?? "000" }
     
     // 6
     public var flightcrew1Name: String { flightcrew1 ?? "" }

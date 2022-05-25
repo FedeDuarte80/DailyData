@@ -6,26 +6,28 @@ import CoreData
 struct ShowingView: View {
     @FetchRequest(fetchRequest: Flightdata.getFlightdata()) var flightdata: FetchedResults<Flightdata>
     @State private var showingAlert = false
+    
     var body: some View {
         NavigationView {
             ScrollView(showsIndicators: false) {
                 ForEach(flightdata) { fl in
+                    
                     HStack {
                         DestinationView(dest1: fl.destination1Name, dest2: fl.destination2Name)
                         Spacer()
                         RegistrationView(reg1: fl.registrationName)
                         Spacer()
                     } // HS
-                    .padding(.vertical)
                     Divider().padding(.vertical, 5)
+                    
                     HStack(spacing: 35) {
                         FlightView(Label: "Flight Nº", a: fl.flight1Name, b: fl.flight2Name, c: fl.flight3Name, d: fl.flight4Name)
                         FlightView(Label: "ETD", a: fl.departure1Name, b: fl.departure2Name, c: fl.departure3Name, d: fl.departure4Name)
                         FlightView(Label: "ETA", a: fl.arrival1Name, b: fl.arrival2Name, c: fl.arrival3Name, d: fl.arrival4Name)
-                        FlightView(Label: "PAX", a: fl.pax1Name, b: fl.pax2Name, c: fl.pax3Name, d: fl.pax4Name).border(.yellow)
+                        FlightView(Label: "PAX", a: fl.pax1Name, b: fl.pax2Name, c: fl.pax3Name, d: fl.pax4Name)
                     } // HS
                     Divider().padding(.vertical, 5)
-                    Text("CREW").modifier(Labels())
+                    
                     HStack {
                         VStack(alignment: .leading, spacing: 34) {
                             CrewView(function: "C - ", name: fl.flightcrew1Name, staff: fl.flightcrew1Number, opa: 1)
@@ -37,6 +39,7 @@ struct ShowingView: View {
                         }.padding(.vertical, 5)
                         Spacer()
                     }
+                    
                     Spacer()
                 } // FE
             }// SV
@@ -78,7 +81,7 @@ struct ShowingView_Previews: PreviewProvider {
         let s = Flightdata(context: viewContext)
         s.destination1 = "DUB"
         s.destination2 = "MAH"
-        s.registration = "LOP"
+        s.registration = "LOP - MAN"
         s.flight1 = "1234"
         s.flight2 = "1234"
         s.flight3 = "1234"

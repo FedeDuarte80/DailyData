@@ -10,6 +10,7 @@ struct DailyDataApp: App {
         WindowGroup {
            // ContentView()
             MainView()
+            
                 .environment(\.managedObjectContext, context)
                 .preferredColorScheme(isDarkMode ? .dark : .light)
         }

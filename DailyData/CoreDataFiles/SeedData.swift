@@ -35,7 +35,7 @@ var flightList = [
         id: 1001,
         destination1: "IBZ",
         destination2: "MAH",
-        registration: "MAN",
+        registration: "MAN - JSY",
         flight1: "1234",
         flight2: "1234",
         flight3: "1234",

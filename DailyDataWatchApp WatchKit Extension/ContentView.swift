@@ -33,8 +33,8 @@ struct ContentView: View {
                             Text(fl.departure1Name)
                             Spacer()
                             Text(fl.arrival1Name)
-                            Spacer()
-                            Text(fl.pax1Name)
+//                            Spacer()
+//                            Text(fl.pax1Name)
                         }
                         HStack {
                             Text(fl.flight2Name)
@@ -42,8 +42,8 @@ struct ContentView: View {
                             Text(fl.departure2Name)
                             Spacer()
                             Text(fl.arrival2Name)
-                            Spacer()
-                            Text(fl.pax2Name)
+//                            Spacer()
+//                            Text(fl.pax2Name)
                         }
                     } else {
                         HStack {
@@ -52,8 +52,8 @@ struct ContentView: View {
                             Text(fl.departure1Name)
                             Spacer()
                             Text(fl.arrival1Name)
-                            Spacer()
-                            Text(fl.pax1Name)
+//                            Spacer()
+//                            Text(fl.pax1Name)
                         }
                         HStack {
                             Text(fl.flight2Name)
@@ -61,8 +61,8 @@ struct ContentView: View {
                             Text(fl.departure2Name)
                             Spacer()
                             Text(fl.arrival2Name)
-                            Spacer()
-                            Text(fl.pax2Name)
+//                            Spacer()
+//                            Text(fl.pax2Name)
                         }
                         HStack {
                             Text(fl.flight3Name)
@@ -70,8 +70,8 @@ struct ContentView: View {
                             Text(fl.departure3Name)
                             Spacer()
                             Text(fl.arrival3Name)
-                            Spacer()
-                            Text(fl.pax3Name)
+//                            Spacer()
+//                            Text(fl.pax3Name)
                         }
                         HStack {
                             Text(fl.flight4Name)
@@ -79,8 +79,8 @@ struct ContentView: View {
                             Text(fl.departure4Name)
                             Spacer()
                             Text(fl.arrival4Name)
-                            Spacer()
-                            Text(fl.pax4Name)
+//                            Spacer()
+//                            Text(fl.pax4Name)
                         }
                     } // else
                 } // VS

@@ -39,6 +39,7 @@ public class PersistentContainer {
     }()
     
 // MARK: - Core Data Saving support
+    
     public static func saveContext () {
             let context = persistentContainer.viewContext
             if context.hasChanges {
@@ -50,18 +51,6 @@ public class PersistentContainer {
                     }
             }
     }
-//    @objc
-//    func processUpdate(notificacion: NSNotification) {
-//        operationQueue.addOperation {
-//
-//        }
-//    }
-//
-//    lazy var operationQueue: OperationQueue = {
-//        var queue = OperationQueue()
-//        queue.maxConcurrentOperationCount = 1
-//        return queue
-//    }()
     
     static func deleteBatch() {
         print("deleteBatch Called")
@@ -90,22 +79,6 @@ public class PersistentContainer {
     }
 }
 
-// TEST
-
-//extension NSPersistentContainer {
-//
-//    /// Called when a certain managed object context has been saved from an external process. It should also be called on the context's queue.
-//    func viewContextDidSaveExternally() {
-//        // `refreshAllObjects` only refreshes objects from which the cache is invalid. With a staleness intervall of -1 the cache never invalidates.
-//        // We set the `stalenessInterval` to 0 to make sure that changes in the app extension get processed correctly.
-//        viewContext.stalenessInterval = 0
-//        viewContext.refreshAllObjects()
-//        viewContext.stalenessInterval = -1
-//        
-//        print("viewContextDidSaveExternally")
-//    }
-//}
-//
 class NSCustomPersistentContainer: NSPersistentContainer {
     
     override open class func defaultDirectoryURL() -> URL {

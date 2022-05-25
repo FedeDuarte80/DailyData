@@ -100,7 +100,7 @@ struct InsertView: View {
                 HStack {
 // MARK: - DESTINATION
                     VStack(alignment: .leading) {
-                        LabelView(label: "Destionation: ")
+                        LabelView(label: "Destination: ")
                         HStack {
                             TextField("", text: $destination1).modifier(DayDetails())
                                 .onSubmit { lastSubmit = destination1
@@ -125,11 +125,11 @@ struct InsertView: View {
                         HStack {
                             Text("EC - ").modifier(Labels())
                             
-                            TextField("", text: $registration).modifier(DayDetails())
+                            TextField("", text: $registration).modifier(regDetails())
                                 .onSubmit { lastSubmit = registration
                                     if let focus = focus { self.focus = focus.next() } }
                                 .focused($focus, equals: .registration)
-                                .limitInputLength(value: $registration, length: 3)
+                                .limitInputLength(value: $registration, length: 9)
                         } // HS
                     } // VS
                     Spacer()

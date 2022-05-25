@@ -30,6 +30,7 @@
 		883ED57427FA1B5F0015BB3A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED57327FA1B5F0015BB3A /* Helpers.swift */; };
 		886D0433282485F50037F419 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8826281727FE239F00DB68FA /* ContentView.swift */; };
 		8881D1BC2804DBDC00E9CEDA /* HelperStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8881D1BB2804DBDC00E9CEDA /* HelperStruct.swift */; };
+		88846590283BB788002031E1 /* SingleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8884658F283BB788002031E1 /* SingleView.swift */; };
 		88914E792836F73D002CC064 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88914E782836F73D002CC064 /* MainView.swift */; };
 		889B0253280CCB9E0066CA95 /* SettingsDarkMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B0252280CCB9E0066CA95 /* SettingsDarkMode.swift */; };
 		88C205092831B88C0096A675 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C205082831B88C0096A675 /* CloudKit.framework */; };
@@ -44,8 +45,6 @@
 		88EDDE05282AD18900C61206 /* Flightdata+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EDDE02282AD18900C61206 /* Flightdata+CoreDataClass.swift */; };
 		88EDDE06282AD18900C61206 /* Flightdata+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EDDE03282AD18900C61206 /* Flightdata+CoreDataProperties.swift */; };
 		88EDDE07282AD18900C61206 /* Flightdata+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EDDE03282AD18900C61206 /* Flightdata+CoreDataProperties.swift */; };
-		88EDDE09282AD2E000C61206 /* TestDevelopers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EDDE08282AD2E000C61206 /* TestDevelopers.swift */; };
-		88EDDE0A282AD2E000C61206 /* TestDevelopers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EDDE08282AD2E000C61206 /* TestDevelopers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +117,7 @@
 		886D04302824843D0037F419 /* DailyDataWatchApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailyDataWatchApp.entitlements; sourceTree = "<group>"; };
 		886D04312824844B0037F419 /* DailyDataWatchApp WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DailyDataWatchApp WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		8881D1BB2804DBDC00E9CEDA /* HelperStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperStruct.swift; sourceTree = "<group>"; };
+		8884658F283BB788002031E1 /* SingleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SingleView.swift; path = DailyData/SingleView.swift; sourceTree = SOURCE_ROOT; };
 		88914E782836F73D002CC064 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		889B0252280CCB9E0066CA95 /* SettingsDarkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDarkMode.swift; sourceTree = "<group>"; };
 		88C205082831B88C0096A675 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.5.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -129,7 +129,6 @@
 		88C9E64F2805F6090062A519 /* SeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedData.swift; sourceTree = "<group>"; };
 		88EDDE02282AD18900C61206 /* Flightdata+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flightdata+CoreDataClass.swift"; sourceTree = "<group>"; };
 		88EDDE03282AD18900C61206 /* Flightdata+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flightdata+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		88EDDE08282AD2E000C61206 /* TestDevelopers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDevelopers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +231,7 @@
 				8848244228107E2300D1A4FC /* Helpers */,
 				883ED56927FA09E90015BB3A /* CoreDataFiles */,
 				883ED55B27FA04A70015BB3A /* Assets.xcassets */,
+				8884658F283BB788002031E1 /* SingleView.swift */,
 				883ED55D27FA04A70015BB3A /* Preview Content */,
 			);
 			path = DailyData;
@@ -254,7 +254,6 @@
 				88EDDE02282AD18900C61206 /* Flightdata+CoreDataClass.swift */,
 				88EDDE03282AD18900C61206 /* Flightdata+CoreDataProperties.swift */,
 				88C9E64F2805F6090062A519 /* SeedData.swift */,
-				88EDDE08282AD2E000C61206 /* TestDevelopers.swift */,
 			);
 			path = CoreDataFiles;
 			sourceTree = "<group>";
@@ -435,7 +434,6 @@
 				8826281E27FE239F00DB68FA /* ComplicationController.swift in Sources */,
 				88EDDE05282AD18900C61206 /* Flightdata+CoreDataClass.swift in Sources */,
 				8826281627FE239F00DB68FA /* DailyDataApp.swift in Sources */,
-				88EDDE0A282AD2E000C61206 /* TestDevelopers.swift in Sources */,
 				8826281C27FE239F00DB68FA /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88846590283BB788002031E1 /* SingleView.swift in Sources */,
 				88EDDE06282AD18900C61206 /* Flightdata+CoreDataProperties.swift in Sources */,
 				88C9E6452805C9160062A519 /* MainView.swift in Sources */,
 				883ED57427FA1B5F0015BB3A /* Helpers.swift in Sources */,
@@ -453,7 +452,6 @@
 				883ED57027FA0BBC0015BB3A /* Flightdata+Extensions.swift in Sources */,
 				88C9E64E2805D34E0062A519 /* OldCode.swift in Sources */,
 				8881D1BC2804DBDC00E9CEDA /* HelperStruct.swift in Sources */,
-				88EDDE09282AD2E000C61206 /* TestDevelopers.swift in Sources */,
 				88C9E6492805C9A60062A519 /* ShowingView.swift in Sources */,
 				88C9E6502805F6090062A519 /* SeedData.swift in Sources */,
 				88C9E64B2805C9AE0062A519 /* SettingsView.swift in Sources */,

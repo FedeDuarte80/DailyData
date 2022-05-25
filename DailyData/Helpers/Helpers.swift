@@ -10,6 +10,16 @@ struct DayDetails: ViewModifier {
             .submitLabel(.next)
             .textInputAutocapitalization(.characters)
     } }
+struct regDetails: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .textFieldStyle(.roundedBorder)
+            .frame(width: 120)
+            .multilineTextAlignment(.center)
+            .submitLabel(.next)
+            .textInputAutocapitalization(.characters)
+    }
+}
 // Section 2
 struct FlightsDetails: ViewModifier {
     func body(content: Content) -> some View {
@@ -34,7 +44,7 @@ struct CrewNumbers: ViewModifier {
         content
             .frame(width: 100)
             .textFieldStyle(.roundedBorder)
-            .multilineTextAlignment(.trailing)
+            .multilineTextAlignment(.center)
             .submitLabel(.next)
             .keyboardType(UIKeyboardType.phonePad)
             

@@ -9,7 +9,11 @@ import SwiftUI
 
 struct NotificationView: View {
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            Text("Flights and Crew info are ready on your iWatch!")
+                .multilineTextAlignment(.center)
+                .lineSpacing(5)
+        }.padding(.horizontal)
     }
 }
 
