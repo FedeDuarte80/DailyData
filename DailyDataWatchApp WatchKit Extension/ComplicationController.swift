@@ -2,6 +2,7 @@ import ClockKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
+    let data = Flightdata()
     
     
 // MARK: - Complication Configuration
@@ -46,9 +47,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
         if complication.family == .graphicRectangular {
             let template = CLKComplicationTemplateGraphicRectangularStandardBody(
-                headerTextProvider: CLKSimpleTextProvider(text: "Header"),
-                body1TextProvider: CLKSimpleTextProvider(text: "Body1"),
-                body2TextProvider: CLKSimpleTextProvider(text: "Body2")
+                headerTextProvider: CLKSimpleTextProvider(text: "\(data.flight1Name) - \(data.departure1Name) - \(data.arrival1Name)"),
+                body1TextProvider: CLKSimpleTextProvider(text: "\(data.flight2Name) - \(data.departure2Name) - \(data.arrival2Name)"),
+                body2TextProvider: CLKSimpleTextProvider(text: "\(data.flight3Name) - \(data.departure3Name) - \(data.arrival3Name)")
             )
             let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
             

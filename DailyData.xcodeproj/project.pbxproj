@@ -21,6 +21,8 @@
 		8826283727FE4E7700DB68FA /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 883ED56A27FA09FA0015BB3A /* CoreDataModel.xcdatamodeld */; };
 		8826283827FE4E7A00DB68FA /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED56D27FA0A090015BB3A /* Persistance.swift */; };
 		8826283927FE4E7D00DB68FA /* Flightdata+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED56F27FA0BBC0015BB3A /* Flightdata+Extensions.swift */; };
+		882C9B482846A73700BE3F6A /* EmptyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C9B472846A73700BE3F6A /* EmptyData.swift */; };
+		882C9B492846A73700BE3F6A /* EmptyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C9B472846A73700BE3F6A /* EmptyData.swift */; };
 		883ED55827FA04A60015BB3A /* DailyDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883ED55727FA04A60015BB3A /* DailyDataApp.swift */; };
 		883ED55C27FA04A70015BB3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 883ED55B27FA04A70015BB3A /* Assets.xcassets */; };
 		883ED55F27FA04A70015BB3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 883ED55E27FA04A70015BB3A /* Preview Assets.xcassets */; };
@@ -106,6 +108,7 @@
 		8826282527FE23A000DB68FA /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		8826283427FE3C9A00DB68FA /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		8826283627FE3CF600DB68FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		882C9B472846A73700BE3F6A /* EmptyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyData.swift; sourceTree = "<group>"; };
 		883ED55427FA04A60015BB3A /* DailyData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		883ED55727FA04A60015BB3A /* DailyDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDataApp.swift; sourceTree = "<group>"; };
 		883ED55B27FA04A70015BB3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -164,9 +167,10 @@
 			isa = PBXGroup;
 			children = (
 				886D04312824844B0037F419 /* DailyDataWatchApp WatchKit Extension.entitlements */,
+				88914E782836F73D002CC064 /* MainView.swift */,
 				8826281527FE239F00DB68FA /* DailyDataApp.swift */,
 				8826281727FE239F00DB68FA /* ContentView.swift */,
-				88914E782836F73D002CC064 /* MainView.swift */,
+				882C9B472846A73700BE3F6A /* EmptyData.swift */,
 				8826281927FE239F00DB68FA /* NotificationController.swift */,
 				8826281B27FE239F00DB68FA /* NotificationView.swift */,
 				8826281D27FE239F00DB68FA /* ComplicationController.swift */,
@@ -435,6 +439,7 @@
 				88EDDE05282AD18900C61206 /* Flightdata+CoreDataClass.swift in Sources */,
 				8826281627FE239F00DB68FA /* DailyDataApp.swift in Sources */,
 				8826281C27FE239F00DB68FA /* NotificationView.swift in Sources */,
+				882C9B492846A73700BE3F6A /* EmptyData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +456,7 @@
 				88EDDE04282AD18900C61206 /* Flightdata+CoreDataClass.swift in Sources */,
 				883ED57027FA0BBC0015BB3A /* Flightdata+Extensions.swift in Sources */,
 				88C9E64E2805D34E0062A519 /* OldCode.swift in Sources */,
+				882C9B482846A73700BE3F6A /* EmptyData.swift in Sources */,
 				8881D1BC2804DBDC00E9CEDA /* HelperStruct.swift in Sources */,
 				88C9E6492805C9A60062A519 /* ShowingView.swift in Sources */,
 				88C9E6502805F6090062A519 /* SeedData.swift in Sources */,

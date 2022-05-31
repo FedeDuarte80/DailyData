@@ -28,10 +28,10 @@ extension Flightdata {
     public var arrival4Name: String { arrival4 ?? "" }
     
     // 5
-    public var pax1Name: String { pax1 ?? "000" }
-    public var pax2Name: String { pax2 ?? "000" }
-    public var pax3Name: String { pax3 ?? "000" }
-    public var pax4Name: String { pax4 ?? "000" }
+    public var pax1Name: String { pax1 ?? "" }
+    public var pax2Name: String { pax2 ?? "" }
+    public var pax3Name: String { pax3 ?? "" }
+    public var pax4Name: String { pax4 ?? "" }
     
     // 6
     public var flightcrew1Name: String { flightcrew1 ?? "" }
@@ -122,6 +122,12 @@ extension Flightdata {
             newData.cabincrew3 = flights.cabincrew3
             newData.cabincrew4 = flights.cabincrew4
             newData.cabincrew5 = flights.cabincrew5
+            newData.flightNumber1 = flights.flightNumber1
+            newData.flightNumber2 = flights.flightNumber2
+            newData.crewNumber2 = flights.crewNumber2
+            newData.crewNumber3 = flights.crewNumber3
+            newData.crewNumber4 = flights.crewNumber4
+            newData.crewNumber5 = flights.crewNumber5
         }
         PersistentContainer.saveContext()
         print("Loading seed data")

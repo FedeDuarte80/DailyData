@@ -168,7 +168,7 @@ struct InsertView: View {
                         }.modifier(FlightsDetails())
                     } // VS
                     VStack(spacing: 14) {
-                        LabelView(label: "ETD")
+                        LabelView(label: "STD")
                         VStack(spacing: 14) {
                         TextField("", text: $departure1)
                                 .onSubmit { lastSubmit = departure1
@@ -197,7 +197,7 @@ struct InsertView: View {
                         }.modifier(FlightsDetails())
                     } // VS
                     VStack(spacing: 14) {
-                        LabelView(label: "ETA")
+                        LabelView(label: "STA")
                         VStack(spacing: 14) {
                         TextField("", text: $arrival1)
                                 .onSubmit { lastSubmit = arrival1
@@ -257,7 +257,6 @@ struct InsertView: View {
                 } // HS
                 Divider().padding(.vertical, 5)
 // MARK: - CREW
-                LabelView(label: "CREW")
                 VStack(spacing: 20) {
                     HStack {
                         LabelView(label: "C - ")

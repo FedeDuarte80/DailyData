@@ -27,6 +27,12 @@ struct FlightDatas: Codable, Identifiable {
     var cabincrew3: String
     var cabincrew4: String
     var cabincrew5: String
+    var flightNumber1: String
+    var flightNumber2: String
+    var crewNumber2: String
+    var crewNumber3: String
+    var crewNumber4: String
+    var crewNumber5: String
 }
 
 var flightList = [
@@ -35,7 +41,7 @@ var flightList = [
         id: 1001,
         destination1: "IBZ",
         destination2: "MAH",
-        registration: "MAN - JSY",
+        registration: "MAN / JSY",
         flight1: "1234",
         flight2: "1234",
         flight3: "1234",
@@ -48,14 +54,21 @@ var flightList = [
         arrival2: "9012",
         arrival3: "9012",
         arrival4: "9012",
-        pax1: "3456",
-        pax2: "3456",
-        pax3: "3456",
-        pax4: "3456",
+        pax1: "123",
+        pax2: "123",
+        pax3: "123",
+        pax4: "123",
         flightcrew1: "captain",
         flightcrew2: "firstoffice",
         cabincrew2: "number2",
         cabincrew3: "number3",
         cabincrew4: "number4",
-        cabincrew5: "numberB")
+        cabincrew5: "numberB",
+        flightNumber1: "12345",
+        flightNumber2: "12345",
+        crewNumber2: "12345",
+        crewNumber3: "12345",
+        crewNumber4: "12345",
+        crewNumber5: "12345"
+    )
 ]

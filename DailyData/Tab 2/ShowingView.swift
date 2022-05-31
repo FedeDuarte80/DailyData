@@ -11,35 +11,50 @@ struct ShowingView: View {
         NavigationView {
             ScrollView(showsIndicators: false) {
                 ForEach(flightdata) { fl in
-                    
-                    HStack {
-                        DestinationView(dest1: fl.destination1Name, dest2: fl.destination2Name)
-                        Spacer()
-                        RegistrationView(reg1: fl.registrationName)
-                        Spacer()
-                    } // HS
+                    RegView(dest1: fl.destination1Name, dest2: fl.destination2Name, reg: fl.registrationName)
                     Divider().padding(.vertical, 5)
-                    
-                    HStack(spacing: 35) {
-                        FlightView(Label: "Flight Nº", a: fl.flight1Name, b: fl.flight2Name, c: fl.flight3Name, d: fl.flight4Name)
-                        FlightView(Label: "ETD", a: fl.departure1Name, b: fl.departure2Name, c: fl.departure3Name, d: fl.departure4Name)
-                        FlightView(Label: "ETA", a: fl.arrival1Name, b: fl.arrival2Name, c: fl.arrival3Name, d: fl.arrival4Name)
-                        FlightView(Label: "PAX", a: fl.pax1Name, b: fl.pax2Name, c: fl.pax3Name, d: fl.pax4Name)
-                    } // HS
-                    Divider().padding(.vertical, 5)
-                    
-                    HStack {
-                        VStack(alignment: .leading, spacing: 34) {
-                            CrewView(function: "C - ", name: fl.flightcrew1Name, staff: fl.flightcrew1Number, opa: 1)
-                            CrewView(function: "F - ", name: fl.flightcrew2Name, staff: fl.flightcrew2Number, opa: 1)
-                            CrewView(function: "2 - ", name: fl.cabincrew2Name, staff: fl.crew2Number, opa: 1)
-                            CrewView(function: "3 - ", name: fl.cabincrew3Name, staff: fl.crew3Number, opa: 1)
-                            CrewView(function: "4 - ", name: fl.cabincrew4Name, staff: fl.crew4Number, opa: fl.cabincrew4Name.isEmpty ? 0 : 1)
-                            CrewView(function: "5 - ", name: fl.cabincrew5Name, staff: fl.crew5Number, opa: fl.cabincrew5Name.isEmpty ? 0 : 1)
-                        }.padding(.vertical, 5)
-                        Spacer()
+                    VStack(spacing: 24) {
+                        FlightsView(a: "Flights", b: "STD", c: "STA", d: "PAX").modifier(Labels())
+                        if fl.flight2Name.isEmpty && fl.flight3Name.isEmpty && fl.flight4Name.isEmpty {
+                            FlightsView(a: fl.flight1Name, b: fl.departure1Name, c: fl.arrival1Name, d: fl.pax1Name)
+                        } else if fl.flight3Name.isEmpty && fl.flight4Name.isEmpty {
+                            FlightsView(a: fl.flight1Name, b: fl.departure1Name, c: fl.arrival1Name, d: fl.pax1Name)
+                            FlightsView(a: fl.flight2Name, b: fl.departure2Name, c: fl.arrival2Name, d: fl.pax2Name)
+                        } else if fl.flight4Name.isEmpty {
+                            FlightsView(a: fl.flight1Name, b: fl.departure1Name, c: fl.arrival1Name, d: fl.pax1Name)
+                            FlightsView(a: fl.flight2Name, b: fl.departure2Name, c: fl.arrival2Name, d: fl.pax2Name)
+                            FlightsView(a: fl.flight3Name, b: fl.departure3Name, c: fl.arrival3Name, d: fl.pax3Name)
+                        } else {
+                            FlightsView(a: fl.flight1Name, b: fl.departure1Name, c: fl.arrival1Name, d: fl.pax1Name)
+                            FlightsView(a: fl.flight2Name, b: fl.departure2Name, c: fl.arrival2Name, d: fl.pax2Name)
+                            FlightsView(a: fl.flight3Name, b: fl.departure3Name, c: fl.arrival3Name, d: fl.pax3Name)
+                            FlightsView(a: fl.flight4Name, b: fl.departure4Name, c: fl.arrival4Name, d: fl.pax4Name)
+                        }
                     }
                     
+                    Divider().padding(.vertical, 5)
+                    
+                    VStack(alignment: .leading, spacing: 34) {
+                        if fl.cabincrew4Name.isEmpty && fl.cabincrew5Name.isEmpty {
+                            CrewView(function: "C - ", name: fl.flightcrew1Name, staff: fl.flightcrew1Number)
+                            CrewView(function: "F - ", name: fl.flightcrew2Name, staff: fl.flightcrew2Number)
+                            CrewView(function: "2 - ", name: fl.cabincrew2Name, staff: fl.crew2Number)
+                            CrewView(function: "3 - ", name: fl.cabincrew3Name, staff: fl.crew3Number)
+                        } else if fl.cabincrew5Name.isEmpty {
+                            CrewView(function: "C - ", name: fl.flightcrew1Name, staff: fl.flightcrew1Number)
+                            CrewView(function: "F - ", name: fl.flightcrew2Name, staff: fl.flightcrew2Number)
+                            CrewView(function: "2 - ", name: fl.cabincrew2Name, staff: fl.crew2Number)
+                            CrewView(function: "3 - ", name: fl.cabincrew3Name, staff: fl.crew3Number)
+                            CrewView(function: "4 - ", name: fl.cabincrew4Name, staff: fl.crew4Number)
+                        } else {
+                            CrewView(function: "C - ", name: fl.flightcrew1Name, staff: fl.flightcrew1Number)
+                            CrewView(function: "F - ", name: fl.flightcrew2Name, staff: fl.flightcrew2Number)
+                            CrewView(function: "2 - ", name: fl.cabincrew2Name, staff: fl.crew2Number)
+                            CrewView(function: "3 - ", name: fl.cabincrew3Name, staff: fl.crew3Number)
+                            CrewView(function: "4 - ", name: fl.cabincrew4Name, staff: fl.crew4Number)
+                            CrewView(function: "5 - ", name: fl.cabincrew5Name, staff: fl.crew5Number)
+                        }
+                    }.padding(.vertical, 5)
                     Spacer()
                 } // FE
             }// SV
@@ -56,7 +71,7 @@ struct ShowingView: View {
             }
         }.navigationViewStyle(.stack)
     }
-// MARK: - FUNCTIONS
+    // MARK: - FUNCTIONS
     func ClearButton() -> some View {
         Button(action: { showingAlert.toggle() }) {
             Text("Clear").disabled(flightdata.isEmpty)
@@ -70,7 +85,7 @@ struct ShowingView: View {
     }
     func addSeedData() -> some View {
         Button(action: {
-        Flightdata.loadSeedData(into: PersistentContainer.persistentContainer.viewContext)
+            Flightdata.loadSeedData(into: PersistentContainer.persistentContainer.viewContext)
         }) { Text("SeedData").disabled(!flightdata.isEmpty) } // Test
     }
 }
@@ -115,3 +130,18 @@ struct ShowingView_Previews: PreviewProvider {
         
     }
 }
+/*
+ HStack {
+ DestinationView(dest1: fl.destination1Name, dest2: fl.destination2Name)
+ Spacer()
+ RegistrationView(reg1: fl.registrationName)
+ Spacer()
+ } // HS
+ ------
+ HStack(spacing: 35) {
+ FlightView(Label: "Flight Nº", a: fl.flight1Name, b: fl.flight2Name, c: fl.flight3Name, d: fl.flight4Name)
+ FlightView(Label: "ETD", a: fl.departure1Name, b: fl.departure2Name, c: fl.departure3Name, d: fl.departure4Name)
+ FlightView(Label: "ETA", a: fl.arrival1Name, b: fl.arrival2Name, c: fl.arrival3Name, d: fl.arrival4Name)
+ FlightView(Label: "PAX", a: fl.pax1Name, b: fl.pax2Name, c: fl.pax3Name, d: fl.pax4Name)
+ } // HS
+ */

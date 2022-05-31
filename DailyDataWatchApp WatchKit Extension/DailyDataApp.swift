@@ -7,7 +7,6 @@ struct DailyDataApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                //TestView()
                 ContentView()
                     .environment(\.managedObjectContext, context)
             }

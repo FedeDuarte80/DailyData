@@ -2,7 +2,6 @@ import CoreData
 import ClockKit
 
 
-
 public class PersistentContainer {
     
 // MARK: - Define Constants / Variables
@@ -37,6 +36,7 @@ public class PersistentContainer {
         
             return container
     }()
+    
     
 // MARK: - Core Data Saving support
     
@@ -88,3 +88,5 @@ class NSCustomPersistentContainer: NSPersistentContainer {
         return storeURL!
     }
 }
+
+

@@ -65,7 +65,7 @@ struct CrewNumbersDone: ViewModifier {
         content
             .frame(width: 100)
             .textFieldStyle(.roundedBorder)
-            .multilineTextAlignment(.trailing)
+            .multilineTextAlignment(.center)
             .submitLabel(.done)
             .keyboardType(UIKeyboardType.phonePad)
     }
