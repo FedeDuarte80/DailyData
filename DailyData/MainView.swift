@@ -11,9 +11,6 @@ struct MainView: View {
             ShowingView().tabItem {
                 Label("Showing", systemImage: "app.badge.checkmark")
             }.tag(1)
-            SettingsView().tabItem {
-                Label("Settings", systemImage: "hammer.circle.fill")
-            }
         } // TV
         .accentColor(Color("AccentColor"))
         .onAppear {
@@ -29,10 +26,6 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             MainView()
-//            MainView().preferredColorScheme(.dark)
         }
-//        .padding()
-//        .frame(height: 80)
-//        .previewLayout(.sizeThatFits)
     }
 }

@@ -94,6 +94,7 @@ extension Flightdata {
         newData.crewNumber5 = num5
         PersistentContainer.saveContext()
     }
+    
     static func loadSeedData(into context: NSManagedObjectContext) {
         for flights in flightList {
             let newData = Flightdata(context: context)

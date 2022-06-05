@@ -11,7 +11,7 @@ struct ShowingView: View {
         NavigationView {
             ScrollView(showsIndicators: false) {
                 ForEach(flightdata) { fl in
-                    RegView(dest1: fl.destination1Name, dest2: fl.destination2Name, reg: fl.registrationName)
+                    RegView(dest1: fl.destination1Name, dest2: fl.destination2Name, reg: fl.registrationName, opacity: fl.destination2Name.isEmpty ? 0 : 1)
                     Divider().padding(.vertical, 5)
                     VStack(spacing: 24) {
                         FlightsView(a: "Flights", b: "STD", c: "STA", d: "PAX").modifier(Labels())
@@ -67,7 +67,7 @@ struct ShowingView: View {
                 ToolbarItem(placement: .navigationBarTrailing) { addSeedData() }
             }
             .confirmationDialog("Are you sure you want to delete all the data?", isPresented: $showingAlert, titleVisibility: .visible) {
-                Button("DELETE ALL", role: .destructive) { PersistentContainer.deleteBatch() }
+                Button("Delete All", role: .destructive) { PersistentContainer.deleteBatch() }
             }
         }.navigationViewStyle(.stack)
     }

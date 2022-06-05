@@ -3,28 +3,42 @@ import SwiftUI
 struct HelperStruct: View {
     var body: some View {
         VStack {
-            FlightsView(a: "Flight Nº", b: "STD", c: "STA", d: "PAX")
-            FlightsView(a: "1234", b: "5678", c: "9012", d: "345")
-            FlightsView(a: "1234", b: "5678", c: "9012", d: "345")
-            FlightsView(a: "1234", b: "5678", c: "9012", d: "345")
-            FlightsView(a: "1234", b: "5678", c: "9012", d: "345")
-            CrewView(function: "2 - ", name: "Number 2", staff: "10999")
-            LabelView(label: "Destination")
-        }
-        .padding(.horizontal)
+
+            RegView(dest1: "IBZ", dest2: "VLC", reg: "MAN", opacity: 1)
+            
+            VStack {
+                FlightsView(a: "Flight Nº", b: "STD", c: "STA", d: "PAX")
+                FlightsView(a: "1234", b: "5678", c: "9012", d: "345")
+                FlightsView(a: "1234", b: "5678", c: "9012", d: "345")
+                FlightsView(a: "1234", b: "5678", c: "9012", d: "345")
+                FlightsView(a: "1234", b: "5678", c: "9012", d: "345")
+            }
+            
+            VStack {
+                CrewView(function: "2 - ", name: "Number 2", staff: "10999")
+                CrewView(function: "2 - ", name: "Number 2", staff: "10999")
+                CrewView(function: "2 - ", name: "Number 2", staff: "10999")
+                CrewView(function: "2 - ", name: "Number 2", staff: "10999")
+                CrewView(function: "2 - ", name: "Number 2", staff: "10999")
+            }
+            
+            Spacer()
+        }.padding(.horizontal)
     }
 }
+
 struct RegView: View {
     let dest1: String
     let dest2: String
     let reg: String
+    let opacity: Double
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 10) {
                 Text("Destination:").modifier(Labels())
                 HStack {
                     Text(dest1)
-                    Text(" - ")
+                    Text(" - ").opacity(opacity)
                     Text(dest2)
                 }
             }
@@ -32,7 +46,7 @@ struct RegView: View {
             VStack(alignment: .leading, spacing: 10) {
                 Text("AC Registration:").modifier(Labels())
                 HStack {
-                    Text("EC - ").modifier(Labels())
+                    Text("EC: ").modifier(Labels())
                     Text(reg)
                 }
             }
@@ -84,53 +98,7 @@ struct LabelView: View {
 struct HelperStruct_Previews: PreviewProvider {
     static var previews: some View {
         HelperStruct()
+            .preferredColorScheme(.dark)
     }
 }
 
-/*
- struct FlightView: View {
-     let Label: String
-     let a: String
-     let b: String
-     let c: String
-     let d: String
-     var body: some View {
-         VStack(spacing: 24) {
-             Text(Label).modifier(Labels())
-             VStack(spacing: 24) {
-                 Text(a)
-                 Text(b)
-                 Text(c)
-                 Text(d)
-             }.frame(width: 65)
-         }
-     }
- }
- --
- struct DestinationView: View {
-     let dest1: String
-     let dest2: String
-     var body: some View {
-         VStack(alignment: .leading, spacing: 10) {
-             Text("Destination:").modifier(Labels())
-             HStack {
-                 Text(dest1)
-                 Text(" - ")
-                 Text(dest2)
-             }
-         }
-     }
- }
- struct RegistrationView: View {
-     let reg1: String
-     var body: some View {
-         VStack(alignment: .leading, spacing: 10) {
-             Text("AC Registration: ").modifier(Labels())
-             HStack {
-                 Text("EC - ").modifier(Labels())
-                 Text(reg1)
-             }
-         }
-     }
- }
- */

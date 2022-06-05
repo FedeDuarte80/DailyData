@@ -29,8 +29,8 @@ struct MainView_Previews: PreviewProvider {
         s.arrival4 = "1234"
         s.pax1 = "123"
         s.pax2 = "123"
-        s.pax3 = "123"
-        s.pax4 = "123"
+        s.pax3 = "12"
+        s.pax4 = ""
         s.flightcrew1 = "QWERTY"
         s.flightNumber1 = "12345"
         s.flightcrew2 = "QWERTY"
@@ -47,8 +47,14 @@ struct MainView_Previews: PreviewProvider {
             MainView()
                 .environment(\.managedObjectContext, PersistentContainer.persistentContainer.viewContext)
             
-            EmptyData()
-            iWatchFlights(flight: "1234", std: "1234", sta: "1234", pax: "123")
+            MainView()
+                .environment(\.managedObjectContext, PersistentContainer.persistentContainer.viewContext)
+                .previewDevice(PreviewDevice(rawValue: "Apple Watch Series 5 - 40mm"))
         }
     }
 }
+
+/*
+ EmptyData()
+ iWatchFlights(flight: "1234", std: "1234", sta: "1234", pax: "123")
+ */

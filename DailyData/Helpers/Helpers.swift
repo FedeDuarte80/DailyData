@@ -51,12 +51,14 @@ struct CrewNumbers: ViewModifier {
     }
 }
 
+// LAST 2 CC MEMBERS
+
 struct CrewDetailsDone: ViewModifier {
     func body(content: Content) -> some View {
         content
             .textFieldStyle(.roundedBorder)
             .multilineTextAlignment(.leading)
-            .submitLabel(.done)
+            .submitLabel(.next)
             .textInputAutocapitalization(.characters)
     }
 }

@@ -3,11 +3,15 @@
 import SwiftUI
 import CoreData
 
+
 struct ContentView: View {
+    
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(fetchRequest: Flightdata.getFlightdata())
     private var flightdata: FetchedResults<Flightdata>
+    @State private var showingAlert = false
     var body: some View {
+        
         ScrollView {
             ForEach(flightdata) { fl in
 // MARK: - Destination
@@ -29,6 +33,7 @@ struct ContentView: View {
                         iWatchFlights(flight: fl.flight2Name, std: fl.departure2Name, sta: fl.arrival2Name, pax: fl.pax2Name)
                         iWatchFlights(flight: fl.flight3Name, std: fl.departure3Name, sta: fl.arrival3Name, pax: fl.pax3Name)
                         iWatchFlights(flight: fl.flight4Name, std: fl.departure4Name, sta: fl.arrival4Name, pax: fl.pax4Name)
+                            
                     }
                 }
                 Divider()
@@ -54,53 +59,26 @@ struct ContentView: View {
                         iWatchCrew(crew: fl.cabincrew5Name, num: fl.crew5Number)
                     }
                 }.lineLimit(1)
-                Button("Delete all") { PersistentContainer.deleteBatch() }.padding(.top)
+                clearButton().padding(.top)
             }
             if flightdata.count == 0 { EmptyData() } // FE
-        }.padding(.horizontal, 2) // SW
+        }
+        .padding(.horizontal, 2) // SW
+        .navigationTitle("DailyData")
+        .navigationBarTitleDisplayMode(.inline)
+        .confirmationDialog("Are you sure you want to delete all the data?", isPresented: $showingAlert, titleVisibility: .visible) {
+            Button("Delete all", role: .destructive) {
+                PersistentContainer.deleteBatch()
+                
+            }
+        }
     }
+    func clearButton() -> some View {
+        Button(action: { showingAlert.toggle() }) { Text("Delete all") }
+    }
+
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var viewContext = PersistentContainer.persistentContainer.viewContext
-    static var previews: some View {
-        let s = Flightdata(context: viewContext)
-        s.destination1 = "DUB"
-        s.destination2 = "MAH"
-        s.registration = "LOP  MAN"
-        s.flight1 = "1234"
-        s.flight2 = "1234"
-        s.flight3 = "1234"
-        s.flight4 = "1234"
-        s.departure1 = "1234"
-        s.departure2 = "1234"
-        s.departure3 = "1234"
-        s.departure4 = "1234"
-        s.arrival1 = "1234"
-        s.arrival2 = "1234"
-        s.arrival3 = "1234"
-        s.arrival4 = "1234"
-        s.pax1 = "123"
-        s.pax2 = "123"
-        s.pax3 = "123"
-        s.pax4 = "123"
-        s.flightcrew1 = "QWERTY"
-        s.flightNumber1 = "12345"
-        s.flightcrew2 = "QWERTY"
-        s.flightNumber2 = "12345"
-        s.cabincrew2 = "QWERTY"
-        s.crewNumber2 = "13245"
-        s.cabincrew3 = "QWERTY"
-        s.crewNumber3 = "13245"
-        s.cabincrew4 = "QWERTY"
-        s.crewNumber4 = "13245"
-        s.cabincrew5 = "QWERTY"
-        s.crewNumber5 = "13245"
-        return ContentView()
-            .environment(\.managedObjectContext, PersistentContainer.persistentContainer.viewContext)
-            .previewDevice(PreviewDevice(rawValue: "Apple Watch Series 7 - 41mm"))
-    }
-}
 
 struct iWatchDestination: View {
     let dest1: String
@@ -122,7 +100,24 @@ struct iWatchDestination: View {
         }
     }
 }
-
+struct iWatchFlights: View {
+    let flight: String
+    let std: String
+    let sta: String
+    let pax: String
+    let w: CGFloat = 40
+    var body: some View {
+        HStack {
+            Text(flight).frame(width: w)
+            Spacer()
+            Text(std).frame(width: w)
+            Spacer()
+            Text(sta).frame(width: w)
+            Spacer()
+            Text(pax).frame(width: 32)
+        }
+    }
+}
 struct iWatchCrew: View {
     let crew: String
     let num: String
@@ -134,120 +129,3 @@ struct iWatchCrew: View {
         }
     }
 }
-
-struct iWatchFlights: View {
-    let flight: String
-    let std: String
-    let sta: String
-    let pax: String
-    var body: some View {
-        HStack {
-            Text(flight) // fl.flight1Name
-            Spacer()
-            Text(std) // fl.departure1Name
-            Spacer()
-            Text(sta) // fl.arrival1Name
-            Spacer()
-            Text(pax) // fl.pax1Name
-        }
-    }
-}
-
-
-
-
-/*
- VStack {
-     HStack {
-         Text(fl.destination1Name)
-         Text("-").opacity(fl.destination2Name.isEmpty ? 0 : 1)
-         Text(fl.destination2Name)
-         Spacer()
-     }
-     HStack {
-         Text("EC - ")
-         Text(fl.registrationName)
-         Spacer()
-     }
- }
- -----
- VStack {
-     if fl.destination2Name.isEmpty {
-         HStack {
-             Text(fl.flight1Name)
-             Spacer()
-             Text(fl.departure1Name)
-             Spacer()
-             Text(fl.arrival1Name)
-             Spacer()
-             Text(fl.pax1Name)
-         }
-         HStack {
-             Text(fl.flight2Name)
-             Spacer()
-             Text(fl.departure2Name)
-             Spacer()
-             Text(fl.arrival2Name)
-             Spacer()
-             Text(fl.pax2Name)
-         }
-     } else {
-         HStack {
-             Text(fl.flight1Name)
-             Spacer()
-             Text(fl.departure1Name)
-             Spacer()
-             Text(fl.arrival1Name)
-             Spacer()
-             Text(fl.pax1Name)
-         }
-         HStack {
-             Text(fl.flight2Name)
-             Spacer()
-             Text(fl.departure2Name)
-             Spacer()
-             Text(fl.arrival2Name)
-             Spacer()
-             Text(fl.pax2Name)
-         }
-         HStack {
-             Text(fl.flight3Name)
-             Spacer()
-             Text(fl.departure3Name)
-             Spacer()
-             Text(fl.arrival3Name)
-             Spacer()
-             Text(fl.pax3Name)
-         }
-         HStack {
-             Text(fl.flight4Name)
-             Spacer()
-             Text(fl.departure4Name)
-             Spacer()
-             Text(fl.arrival4Name)
-             Spacer()
-             Text(fl.pax4Name)
-         }.disabled(fl.flight4Name.isEmpty)
-     } // else
- } // VS
- ---
- HStack {
-     VStack(alignment: .leading) {
-         Text(fl.flightcrew1Name)
-         Text(fl.flightcrew2Name)
-         Text(fl.cabincrew2Name)
-         Text(fl.cabincrew3Name)
-         Text(fl.cabincrew4Name)
-         Text(fl.cabincrew5Name)
-     }.lineLimit(1)
-     Spacer()
-     VStack(alignment: .trailing) {
-         Text(fl.flightcrew1Number)
-         Text(fl.flightcrew2Number)
-         Text(fl.crew2Number)
-         Text(fl.crew3Number)
-         Text(fl.crew4Number)
-         Text(fl.crew5Number)
-     }
- } // VS
- */

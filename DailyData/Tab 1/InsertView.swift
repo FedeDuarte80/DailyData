@@ -399,6 +399,8 @@ struct InsertView: View {
             self.crewNumber3 = ""
             self.crewNumber4 = ""
             self.crewNumber5 = ""
+            
+            focus = nil 
         }) {
             Text("Send")
         }.disabled(destination1.isEmpty)

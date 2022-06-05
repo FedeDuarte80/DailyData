@@ -1,9 +1,4 @@
-//
-//  NotificationController.swift
-//  DailyDataWatchApp WatchKit Extension
-//
 //  Created by Fede Duarte on 6/4/22.
-//
 
 import WatchKit
 import SwiftUI
@@ -29,6 +24,7 @@ class NotificationController: WKUserNotificationHostingController<NotificationVi
         // This method is called when a notification needs to be presented.
         // Implement it if you use a dynamic notification interface.
         // Populate your dynamic notification interface as quickly as possible.
+        
     }
 }
 

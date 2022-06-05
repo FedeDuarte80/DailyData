@@ -1,18 +1,18 @@
 {
   "images" : [
     {
-      "filename" : "aircraftiwatch44 copy.png",
+      "filename" : "DDappIcon 44.png",
       "idiom" : "watch",
       "scale" : "2x"
     },
     {
-      "filename" : "aircraftiwatch40.png",
+      "filename" : "DDappIcon 40.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : "<=145"
     },
     {
-      "filename" : "aircraftiwatch50.png",
+      "filename" : "DDappIcon 50.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">183"
