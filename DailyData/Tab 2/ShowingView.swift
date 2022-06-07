@@ -15,45 +15,40 @@ struct ShowingView: View {
                     Divider().padding(.vertical, 5)
                     VStack(spacing: 24) {
                         FlightsView(a: "Flights", b: "STD", c: "STA", d: "PAX").modifier(Labels())
-                        if fl.flight2Name.isEmpty && fl.flight3Name.isEmpty && fl.flight4Name.isEmpty {
+                        if !fl.flight1Name.isEmpty {
                             FlightsView(a: fl.flight1Name, b: fl.departure1Name, c: fl.arrival1Name, d: fl.pax1Name)
-                        } else if fl.flight3Name.isEmpty && fl.flight4Name.isEmpty {
-                            FlightsView(a: fl.flight1Name, b: fl.departure1Name, c: fl.arrival1Name, d: fl.pax1Name)
+                        } else { EmptyView() }
+                        if !fl.flight2Name.isEmpty {
                             FlightsView(a: fl.flight2Name, b: fl.departure2Name, c: fl.arrival2Name, d: fl.pax2Name)
-                        } else if fl.flight4Name.isEmpty {
-                            FlightsView(a: fl.flight1Name, b: fl.departure1Name, c: fl.arrival1Name, d: fl.pax1Name)
-                            FlightsView(a: fl.flight2Name, b: fl.departure2Name, c: fl.arrival2Name, d: fl.pax2Name)
+                        } else { EmptyView() }
+                        if !fl.flight3Name.isEmpty {
                             FlightsView(a: fl.flight3Name, b: fl.departure3Name, c: fl.arrival3Name, d: fl.pax3Name)
-                        } else {
-                            FlightsView(a: fl.flight1Name, b: fl.departure1Name, c: fl.arrival1Name, d: fl.pax1Name)
-                            FlightsView(a: fl.flight2Name, b: fl.departure2Name, c: fl.arrival2Name, d: fl.pax2Name)
-                            FlightsView(a: fl.flight3Name, b: fl.departure3Name, c: fl.arrival3Name, d: fl.pax3Name)
+                        } else { EmptyView() }
+                        if !fl.flight4Name.isEmpty {
                             FlightsView(a: fl.flight4Name, b: fl.departure4Name, c: fl.arrival4Name, d: fl.pax4Name)
-                        }
+                        } else { EmptyView() }
                     }
-                    
                     Divider().padding(.vertical, 5)
                     
                     VStack(alignment: .leading, spacing: 34) {
-                        if fl.cabincrew4Name.isEmpty && fl.cabincrew5Name.isEmpty {
+                        if !fl.flightcrew1Name.isEmpty {
                             CrewView(function: "C - ", name: fl.flightcrew1Name, staff: fl.flightcrew1Number)
+                        } else { EmptyView() }
+                        if !fl.flightcrew2Name.isEmpty {
                             CrewView(function: "F - ", name: fl.flightcrew2Name, staff: fl.flightcrew2Number)
+                        } else { EmptyView() }
+                        if !fl.cabincrew2Name.isEmpty {
                             CrewView(function: "2 - ", name: fl.cabincrew2Name, staff: fl.crew2Number)
+                        } else { EmptyView() }
+                        if !fl.cabincrew3Name.isEmpty {
                             CrewView(function: "3 - ", name: fl.cabincrew3Name, staff: fl.crew3Number)
-                        } else if fl.cabincrew5Name.isEmpty {
-                            CrewView(function: "C - ", name: fl.flightcrew1Name, staff: fl.flightcrew1Number)
-                            CrewView(function: "F - ", name: fl.flightcrew2Name, staff: fl.flightcrew2Number)
-                            CrewView(function: "2 - ", name: fl.cabincrew2Name, staff: fl.crew2Number)
-                            CrewView(function: "3 - ", name: fl.cabincrew3Name, staff: fl.crew3Number)
+                        } else { EmptyView() }
+                        if !fl.cabincrew4Name.isEmpty {
                             CrewView(function: "4 - ", name: fl.cabincrew4Name, staff: fl.crew4Number)
-                        } else {
-                            CrewView(function: "C - ", name: fl.flightcrew1Name, staff: fl.flightcrew1Number)
-                            CrewView(function: "F - ", name: fl.flightcrew2Name, staff: fl.flightcrew2Number)
-                            CrewView(function: "2 - ", name: fl.cabincrew2Name, staff: fl.crew2Number)
-                            CrewView(function: "3 - ", name: fl.cabincrew3Name, staff: fl.crew3Number)
-                            CrewView(function: "4 - ", name: fl.cabincrew4Name, staff: fl.crew4Number)
+                        } else { EmptyView() }
+                        if !fl.cabincrew5Name.isEmpty {
                             CrewView(function: "5 - ", name: fl.cabincrew5Name, staff: fl.crew5Number)
-                        }
+                        } else { EmptyView() }
                     }.padding(.vertical, 5)
                     Spacer()
                 } // FE
@@ -131,6 +126,43 @@ struct ShowingView_Previews: PreviewProvider {
     }
 }
 /*
+ 
+ if fl.flight2Name.isEmpty && fl.flight3Name.isEmpty && fl.flight4Name.isEmpty {
+ FlightsView(a: fl.flight1Name, b: fl.departure1Name, c: fl.arrival1Name, d: fl.pax1Name)
+ } else if fl.flight3Name.isEmpty && fl.flight4Name.isEmpty {
+ FlightsView(a: fl.flight1Name, b: fl.departure1Name, c: fl.arrival1Name, d: fl.pax1Name)
+ FlightsView(a: fl.flight2Name, b: fl.departure2Name, c: fl.arrival2Name, d: fl.pax2Name)
+ } else if fl.flight4Name.isEmpty {
+ FlightsView(a: fl.flight1Name, b: fl.departure1Name, c: fl.arrival1Name, d: fl.pax1Name)
+ FlightsView(a: fl.flight2Name, b: fl.departure2Name, c: fl.arrival2Name, d: fl.pax2Name)
+ FlightsView(a: fl.flight3Name, b: fl.departure3Name, c: fl.arrival3Name, d: fl.pax3Name)
+ } else {
+ FlightsView(a: fl.flight1Name, b: fl.departure1Name, c: fl.arrival1Name, d: fl.pax1Name)
+ FlightsView(a: fl.flight2Name, b: fl.departure2Name, c: fl.arrival2Name, d: fl.pax2Name)
+ FlightsView(a: fl.flight3Name, b: fl.departure3Name, c: fl.arrival3Name, d: fl.pax3Name)
+ FlightsView(a: fl.flight4Name, b: fl.departure4Name, c: fl.arrival4Name, d: fl.pax4Name)
+ }
+ 
+ if fl.cabincrew4Name.isEmpty && fl.cabincrew5Name.isEmpty {
+ CrewView(function: "C - ", name: fl.flightcrew1Name, staff: fl.flightcrew1Number)
+ CrewView(function: "F - ", name: fl.flightcrew2Name, staff: fl.flightcrew2Number)
+ CrewView(function: "2 - ", name: fl.cabincrew2Name, staff: fl.crew2Number)
+ CrewView(function: "3 - ", name: fl.cabincrew3Name, staff: fl.crew3Number)
+ } else if fl.cabincrew5Name.isEmpty {
+ CrewView(function: "C - ", name: fl.flightcrew1Name, staff: fl.flightcrew1Number)
+ CrewView(function: "F - ", name: fl.flightcrew2Name, staff: fl.flightcrew2Number)
+ CrewView(function: "2 - ", name: fl.cabincrew2Name, staff: fl.crew2Number)
+ CrewView(function: "3 - ", name: fl.cabincrew3Name, staff: fl.crew3Number)
+ CrewView(function: "4 - ", name: fl.cabincrew4Name, staff: fl.crew4Number)
+ } else {
+ CrewView(function: "C - ", name: fl.flightcrew1Name, staff: fl.flightcrew1Number)
+ CrewView(function: "F - ", name: fl.flightcrew2Name, staff: fl.flightcrew2Number)
+ CrewView(function: "2 - ", name: fl.cabincrew2Name, staff: fl.crew2Number)
+ CrewView(function: "3 - ", name: fl.cabincrew3Name, staff: fl.crew3Number)
+ CrewView(function: "4 - ", name: fl.cabincrew4Name, staff: fl.crew4Number)
+ CrewView(function: "5 - ", name: fl.cabincrew5Name, staff: fl.crew5Number)
+ }
+ 
  HStack {
  DestinationView(dest1: fl.destination1Name, dest2: fl.destination2Name)
  Spacer()

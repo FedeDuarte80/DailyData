@@ -1,9 +1,3 @@
-//
-//  NotificationView.swift
-//  DailyDataWatchApp WatchKit Extension
-//
-//  Created by Fede Duarte on 6/4/22.
-//
 
 import SwiftUI
 

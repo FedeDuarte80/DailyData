@@ -33,6 +33,7 @@
 		886D0433282485F50037F419 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8826281727FE239F00DB68FA /* ContentView.swift */; };
 		8881D1BC2804DBDC00E9CEDA /* HelperStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8881D1BB2804DBDC00E9CEDA /* HelperStruct.swift */; };
 		88914E792836F73D002CC064 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88914E782836F73D002CC064 /* MainView.swift */; };
+		88999796284EB3C500B55022 /* TestWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88999795284EB3C500B55022 /* TestWatch.swift */; };
 		88C205092831B88C0096A675 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C205082831B88C0096A675 /* CloudKit.framework */; };
 		88C9E6452805C9160062A519 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9E6442805C9160062A519 /* MainView.swift */; };
 		88C9E6472805C98F0062A519 /* InsertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9E6462805C98F0062A519 /* InsertView.swift */; };
@@ -118,6 +119,7 @@
 		886D04312824844B0037F419 /* DailyDataWatchApp WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DailyDataWatchApp WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		8881D1BB2804DBDC00E9CEDA /* HelperStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperStruct.swift; sourceTree = "<group>"; };
 		88914E782836F73D002CC064 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		88999795284EB3C500B55022 /* TestWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWatch.swift; sourceTree = "<group>"; };
 		88C205082831B88C0096A675 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.5.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		88C9E6442805C9160062A519 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		88C9E6462805C98F0062A519 /* InsertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertView.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			children = (
 				886D04312824844B0037F419 /* DailyDataWatchApp WatchKit Extension.entitlements */,
 				88914E782836F73D002CC064 /* MainView.swift */,
+				88999795284EB3C500B55022 /* TestWatch.swift */,
 				8826281527FE239F00DB68FA /* DailyDataApp.swift */,
 				8826281727FE239F00DB68FA /* ContentView.swift */,
 				882C9B472846A73700BE3F6A /* EmptyData.swift */,
@@ -413,6 +416,7 @@
 				8826283827FE4E7A00DB68FA /* Persistance.swift in Sources */,
 				88914E792836F73D002CC064 /* MainView.swift in Sources */,
 				88EDDE07282AD18900C61206 /* Flightdata+CoreDataProperties.swift in Sources */,
+				88999796284EB3C500B55022 /* TestWatch.swift in Sources */,
 				8826283927FE4E7D00DB68FA /* Flightdata+Extensions.swift in Sources */,
 				88C9E6512805FB930062A519 /* SeedData.swift in Sources */,
 				8826281A27FE239F00DB68FA /* NotificationController.swift in Sources */,

@@ -358,6 +358,7 @@ struct InsertView: View {
     }
     func saveDataButton() -> some View {
         Button(action: {
+            PersistentContainer.deleteBatch()
             Flightdata.addFlightsData(
                 des1: destination1, des2: destination2, reg: registration,
                 fli1: flight1, dep1: departure1, arr1: arrival1, pa1: pax1,
